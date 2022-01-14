@@ -1,0 +1,214 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">PicEasy</string>
+    <string name="tools">More Tools</string>
+
+    <!-- home -->
+    <string name="home_title_01">AI Enhance Photo</string>
+    <string name="home_title_02">Photo Retouch</string>
+    <string name="home_content_01">Restore high-definition pictures</string>
+    <string name="home_content_02">Remove obstructions</string>
+
+    <!--Splash-->
+    <string name="splash_title">Best Photo Editer &amp; Enhance</string>
+
+    <!--mine-->
+    <string name="mine_setting">其它服务</string>
+    <string name="mine_login">LOGIN</string>
+    <string name="mine_login_before_des">Guest</string>
+    <string name="mine_logout">Logout</string>
+
+    <!--setting-->
+    <string name="setting_about_us_des">关于我们，了解更多</string>
+    <string name="setting_account_delete">账号注销</string>
+    <string name="setting_clear_cache_des">账号永久注销</string>
+
+    <string name="feedback_hint">请您输入您需要反馈的内容，如产品性能问题，请详细描述无法恢复的内容及有效的投诉理由，我们将会以您提交的内容描述进行审核。</string>
+    <string name="feedback_pay_account">请输入您用于支付的支付宝账号</string>
+    <string name="feedback_contact">请输入您的手机号(11位有效手机号)</string>
+    <string name="feedback_img_content">上传图片（不超过3张 ,每张不大于1MB）</string>
+
+    <!--customer service dialog-->
+    <string name="customer_service_refuse">暂不使用</string>
+
+    <!--pay-->
+    <string name="pay_unit">元</string>
+    <string name="pay_title">订单支付</string>
+
+    <!--service-->
+    <string name="vip_service_des">VIP专属客服，点击发起会话</string>
+    <string name="visitor_service_des">全部会员可用，三个工作日内审核，审核结果短信通知</string>
+    <string name="common_questions_des">软件使用以及恢复等常见问题(非客服在线时间可以参考)</string>
+    <string name="charge">立即充值</string>
+
+    <!--public resource-->
+    <string name="progress_des">多选恢复和删除，长按查看详情</string>
+    <string name="progress_des_1">正在计算文件的大小…</string>
+    <string name="progress_des_2">多选恢复和删除</string>
+    <string name="progress_status_searching">扫描中...</string>
+
+    <!--accessibility-->
+    <string name="access_description">一键备份</string>
+
+    <!--wechat error-->
+    <string name="errcode_success">发送成功</string>
+    <string name="errcode_cancel">发送取消</string>
+    <string name="errcode_deny">发送被拒绝</string>
+    <string name="errcode_unsupported">不支持错误</string>
+    <string name="errcode_unknown">发送返回</string>
+
+    <!--not find dialog-->
+    <string name="not_find_title">提示</string>
+    <string name="not_find_content">账户注销之后，您的所有信息都将会抹除，包括您付费记录和您享有的会员权限都将删除，您是否确定要继续操作？</string>
+
+    <!--questions-->
+    <string name="questions_title">帮助中心</string>
+
+    <!--photo_title-->
+    <string name="title_colour_">黑白照片上色</string>
+    <string name="title_colorful_">色彩增强</string>
+    <string name="title_watermark_">去遮挡物</string>
+    <string name="title_definition_">清晰度增强</string>
+    <string name="title_resize_">图片无损放大</string>
+    <string name="title_contrast_">图片对比度增强</string>
+    <string name="title_cartoon_">人像动漫化</string>
+    <string name="title_trans_style_">人物风格转换</string>
+    <string name="title_defogging_">图像去雾</string>
+    <string name="title_stretch_fix_">拉伸图像恢复</string>
+    <string name="title_matting_">一键抠图</string>
+    <string name="title_crop_">图片裁剪</string>
+    <string name="title_trans_format_">格式转换</string>
+    <string name="title_compress_">图片压缩</string>
+    <string name="title_format_trans_">图片格式转换</string>
+    <string name="title_size_modify_">修改尺寸</string>
+    <string name="title_age_trans_">人像年龄转换</string>
+    <string name="title_gender_trans_">人像性别转换</string>
+    <string name="title_face_merge_">人脸融合</string>
+    <string name="title_morph_">人像渐变</string>
+
+    <!--photo_desc-->
+    <string name="desc_fix">优化图像纹理细节，使画面更加自然清晰</string>
+    <string name="desc_colour">智能识别黑白图像内容并填充色彩</string>
+    <string name="desc_watermark">去除图片上水印等不需要的遮挡物</string>
+    <string name="desc_resize">在尽量保持图片质量的情况下将图片无损放大</string>
+    <string name="desc_definition">AI智能调节图片的清晰度</string>
+    <string name="desc_contrast">AI智能调节图片的对比度（鲜明程度）</string>
+    <string name="desc_defogging">AI智能重建可辨析的图像</string>
+    <string name="desc_stretch">AI智能还原过度拉伸的图像</string>
+    <string name="desc_matting">人像与背景进行分离</string>
+
+    <!--zip-->
+    <string name="zip_pic_size">图片大小</string>
+
+    <!--enjoy-->
+    <string name="enjoy_six">享受六大特权</string>
+    <string name="enjoy_ten">享受十大特权</string>
+
+    <!--fix tips-->
+    <string name="fix_tips_title">温馨提示</string>
+    <string name="fix_tips_1">付费修图功能上线啦！优质的线上修图服务，价格优惠，等你下单！为了用户能更好的享受图像付费修图功能的服务，请在下单时遵守以下规则：</string>
+    <string name="fix_tips_2">本说明的解释权归照片智能修复软件服务平台所有</string>
+    <string name="fix_tips_3">1.下单前请先与客服进行沟通，双方达成共识后再行下单哦</string>
+    <string name="fix_tips_4">2.不支持非法修图。包括但不限于：修改合同、身份证、健康码、钱包截图、印章等，请大家自觉遵守。非法修图订单在平台内不接受保护,请用户谨慎操作。</string>
+    <string name="fix_tips_5">3.为了确保大家最终能收到满意的图，请在下单前与客服及修图师将自己的需求进行充分说明，文明用语礼貌沟通，以保证良好的沟通环境。</string>
+    <string name="fix_tips_6">4.当订单存在纠纷时，用户可请客服介入，客服有权限查看双方过往聊天记录。</string>
+
+    <!--about us-->
+    <string name="about_us_des">PicEasy now!! More than 100,000 people used. Just with one tap, you can easily Enhance,Remove, Retouch, Cutout, Animation, Compression your photos and pictures.There is more than 16+ functions for you to become an editor master without any further complicated skills, and achieve the effects you want. The only thing we want to do is to make it easy to use for every user.</string>
+    <string name="about_us_des_2">If you have any suggestions and feedback on the product, Please contact us</string>
+    <string name="about_us_des_4">Hi there, thank you for choose PicEasy! If you encounter an error or bug, you may email to jxwl2020@gmail.com with the screenshot and your mobile details for us to investigate and advise further.Hope to hear from you soon.</string>
+    <string name="about_us_des_3">Email： jxwl2020@gmail.com</string>
+    <string name="about_us_des_5">PicEasy： Photo Editer &amp; Enhance</string>
+
+    <string name="your_web_client_id">160523156867-ldpf7s9ievarp1vuv6kvgnps6ijj3o0t.apps.googleusercontent.com</string>
+    <string name="pay_style_default">Google Pay</string>
+    <string name="login_failed">login failed</string>
+    <string name="login_success">login success</string>
+    <string name="login_agree_01">I have read and agreed</string>
+    <string name="login_agree_02">\&#034;Terms of User\&#034;</string>
+    <string name="login_agree_03">&amp;</string>
+    <string name="login_agree_04">\&#034;Privacy Policy\&#034;</string>
+    <string name="title_gender_trans">Gender Transtion</string>
+    <string name="fix_tips">The size of the picture and the network will affect the speed of the picture, pleaseWait patiently, the successfully processed pictures will be saved in the album.</string>
+    <string name="desc_open_album">import from Album</string>
+    <string name="title_defogging">Defogging</string>
+    <string name="title_matting">One-Click Cutout</string>
+    <string name="title_trans_format">Format Conversion</string>
+    <string name="title_definition">Sharpness Enhancement</string>
+    <string name="title_colour">Colorized</string>
+    <string name="title_resize">Nondestructive Amoplification</string>
+    <string name="title_watermark">Remove Obstructions</string>
+    <string name="title_stretch_fix">Stretch Recovery</string>
+    <string name="title_trans_style">Style Shift</string>
+    <string name="title_cartoon">Cartoon Selfie</string>
+    <string name="pay_show_name">Successfully received payment data for %s!</string>
+    <string name="agreement_service">Terms Of User</string>
+    <string name="agreement_privacy">Privacy Policy</string>
+    <string name="agreement_agree">agree</string>
+    <string name="agreement_disagree">disagree</string>
+    <string name="mine_website">Official Website</string>
+    <string name="mine_help">Feedback</string>
+    <string name="mine_service">Terms Of User</string>
+    <string name="mine_privacy">Privacy Policy</string>
+    <string name="setting_about_us">About Us</string>
+    <string name="setting_clear_cache">Clear Cache</string>
+    <string name="zip_pic_px">Resolving Power</string>
+    <string name="zip_percent">Compression Ratio</string>
+    <string name="fix_tips_format_trans">The picture is less than 5MB</string>
+    <string name="fix_tips_zip_vivo">"You can find picture from album ,  or open file manager and find it in a folder named \"Album\" if the task is done successfully. "</string>
+    <string name="title_compress">Compression</string>
+    <string name="title_face_merge">Face Fusion</string>
+    <string name="title_age_trans">Age Conversion</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_format_trans">Format Conversion</string>
+    <string name="progress_begin">START</string>
+    <string name="other_choose_photo">import a picture</string>
+    <string name="fix_access">Processing...</string>
+    <string name="fix_begin">START</string>
+    <string name="title_album">Album</string>
+    <string name="title_contrast">Contrast Enhancement</string>
+    <string name="title_crop">Crop</string>
+    <string name="fix_save_to_album">Saved in album</string>
+    <string name="feedback_submit">Submit</string>
+    <string name="desc_open_camera">take photo</string>
+    <string name="customer_service_agree">Agree</string>
+    <string name="other_agree_privacy">Please checked \&#034;Privacy Policy\&#034; and \&#034;Terms of User\&#034;</string>
+    <string name="customer_service_title">Privacy Policy and Terms of User</string>
+    <string name="auth_service_title">Permissions Application</string>
+    <string name="auth_service_refuse">Cancel</string>
+    <string name="auth_service_agree">Authorize</string>
+    <string name="customer_service_agreement">Welcome to use our app</string>
+    <string name="feedback">Feedback</string>
+    <string name="quite_title">Are you sure to exit?</string>
+    <string name="quite_ok">Sure</string>
+    <string name="quite_cancel">Back</string>
+    <string name="auth_service_content_1">Read device infomation: Obtain the IMEI of the device, phone model and system version to generate the unique identifier of the device to generate a visitor number, and reduce the network requests of the device</string>
+    <string name="auth_service_content_2">Read and Write in storage space: All functions of the application need to read the album and then generate new photos to save to storage space or album.</string>
+    <string name="mine_vip">VIP</string>
+    <string name="mine_feedback">Feedback</string>
+    <string name="auth_service_content">We are going to ask for some permissions and tell you the purpose of our application:</string>
+    <string name="title_fix">Photo Fix</string>
+    <string name="title_size_modify">Resize</string>
+    <string name="desc_1">Import a face picture, based on ai-face-algorithm, making a new faces of different genders</string>
+    <string name="desc_2">Photos with lost features and severely damaged facial creases are not suitable for smart repair</string>
+    <string name="desc_3">Remove unnecessary objects or occlusions in the picture, and fill them with background content to repair the defect content and improve the quality of the picture</string>
+    <string name="desc_4">The size of the image cannot exceed 4MB. The shortest side of the image must be at least 10px, the longest side must be at most 4000px, and the length and width must be less than 3:1</string>
+    <string name="desc_5">Enlarge the image twice in the length and width directions to keep the image quality intact</string>
+    <string name="desc_6">Blurred image intelligent noise reduction，and make the picture more natural and clear</string>
+    <string name="desc_7">Customize a unique animation image for you</string>
+    <string name="desc_8">The task head portrait can be transformed into cartoon painting</string>
+    <string name="desc_9">The photos taken in foggy weather were defogged to restore clearer images</string>
+    <string name="desc_10">Automatically recognize overstretched pictures and restore them to normal proportions</string>
+    <string name="desc_11">Adjust the contrast of too dark or over exposure images to make them sharper</string>
+    <string name="desc_12">The picture file type supports PNG/JPG/JPEG/BMP format, the picture size does not exceed 3MB, and the picture length and width product does not exceed 2000px*2000px</string>
+    <string name="desc_13">Intelligent recognition of black and white image content and color filling</string>
+    <string name="desc_14">The picture file type supports PNG/JPG/JPEG/BMP format, picture size does not exceed 3MB, the shortest side of the picture is at least 10px, the longest side is up to 2000px, and the aspect ratio is within 3:1</string>
+    <string name="desc_15">The photo is best in black and white, the  effect will be more obvious</string>
+    <string name="desc_16">The size of the image cannot exceed 4MB. The shortest side of the image must be at least 10px, the longest side must be at most 4000px, and the length and width must be less than 3:1</string>
+    <string name="desc_17">Identify the range of human body outline, and separate from the background, suitable for background replacement, photo synthesis, body effects and other scenes. The scope of application is to expose the photo and the number of photos is not more than 2 people</string>
+    <string name="desc_18">Upload a face picture, based on face editing and generation algorithm, output a face old or young picture, support to achieve the change of different ages of the face.</string>
+    <string name="desc_19">Upload 2 to 5 clear face images and generate a portrait gradient video based on face editing and generation algorithm</string>
+    <string name="desc_20">Facial-level fusion of uploaded photos and specific images</string>
+    <string name="fix_tips_zip">Compression ratio and custom resolution may affect the quality of the image</string>
+    <string name="title_morph">Portrait Gradient</string>
+</resources>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "160523156867",
+    "project_id": "piceasy",
+    "storage_bucket": "piceasy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160523156867:android:05d529c65c236f5e968ab6",
+        "android_client_info": {
+          "package_name": "com.piceasy.tools"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160523156867-nmklqdqt32bk9siptdhti9jt9gtnrs8f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.piceasy.tools",
+            "certificate_hash": "c2341e2080e94bb6f0e7a499c6038652cabd3e3b"
+          }
+        },
+        {
+          "client_id": "160523156867-8363r8l3skhb0ssvl41dl7ngqr8jk225.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvSUq9Awp_e9FZC5rL33qIgqyRIg_1pkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160523156867-8363r8l3skhb0ssvl41dl7ngqr8jk225.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "160523156867-54d3re5628s77i0du9kavqi1c1bgl9pk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ql.recover.photoRecover",
+                "app_store_id": "1601368414"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
