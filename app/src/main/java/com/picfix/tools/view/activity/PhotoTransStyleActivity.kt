@@ -18,6 +18,7 @@ import com.picfix.tools.adapter.DataAdapter
 import com.picfix.tools.bean.Resource
 import com.picfix.tools.config.Constant
 import com.picfix.tools.controller.ImageManager
+import com.picfix.tools.controller.LogReportManager
 import com.picfix.tools.utils.AppUtil
 import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
@@ -62,6 +63,8 @@ class PhotoTransStyleActivity : BaseActivity() {
 
     override fun initData() {
         initRecyclerView()
+
+        LogReportManager.logReport("图片风格转换", "访问页面", LogReportManager.LogType.OPERATION)
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -129,6 +132,8 @@ class PhotoTransStyleActivity : BaseActivity() {
         intent.data = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         intent.type = "image/*"
         startActivityForResult(intent, 0x1001)
+
+        LogReportManager.logReport("图片风格转换", "打开相册", LogReportManager.LogType.OPERATION)
     }
 
     private fun toImagePage(uri: Uri) {

@@ -200,7 +200,7 @@ class ImageActivity : BaseActivity() {
             }
 
             title.text = text
-            LogReportManager.logReport(reportTitle, "访问了", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport("图片处理页", "访问页面", LogReportManager.LogType.OPERATION)
 
         }
     }
@@ -331,6 +331,8 @@ class ImageActivity : BaseActivity() {
         intent.data = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         intent.type = "image/*"
         startActivityForResult(intent, requestCode)
+
+        LogReportManager.logReport(reportTitle, "打开相册", LogReportManager.LogType.OPERATION)
     }
 
     private fun checkPay(pay: () -> Unit, notPay: () -> Unit) {
@@ -350,6 +352,7 @@ class ImageActivity : BaseActivity() {
             return
         }
 
+        LogReportManager.logReport("图片处理页", "点击了处理", LogReportManager.LogType.OPERATION)
 
         checkPay({
             if (from != null) {
@@ -391,7 +394,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun cartoon() {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.cartoon(this@ImageActivity, Uri.parse(uriStr), object : HttpCallback {
                     override fun onSuccess() {
@@ -424,7 +427,7 @@ class ImageActivity : BaseActivity() {
         }
 
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.styleTrans(this@ImageActivity, firstFacePath!!, type, object : HttpCallback {
                     override fun onSuccess() {
@@ -451,7 +454,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun dehaze() {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.dehaze(this@ImageActivity, firstFacePath!!, object : HttpCallback {
                     override fun onSuccess() {
@@ -478,7 +481,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun contrastEnhance() {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.contrastEnhance(this@ImageActivity, firstFacePath!!, object : HttpCallback {
                     override fun onSuccess() {
@@ -505,7 +508,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun colourize() {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.colourize(this@ImageActivity, firstFacePath!!, object : HttpCallback {
                     override fun onSuccess() {
@@ -534,7 +537,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun definition() {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.definition(this@ImageActivity, firstFacePath!!, object : HttpCallback {
                     override fun onSuccess() {
@@ -562,7 +565,7 @@ class ImageActivity : BaseActivity() {
      * 图像色彩增强
      */
     private fun colorEnhance() {
-        LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+        LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
         if (firstFacePath != null) {
             launch(Dispatchers.IO) {
                 ImageManager.colorEnhance(this@ImageActivity, firstFacePath!!, object : HttpCallback {
@@ -593,7 +596,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun enlarge() {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.enlargeImage(this@ImageActivity, firstFacePath!!, object : HttpCallback {
                     override fun onSuccess() {
@@ -622,7 +625,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun stretch() {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.stretch(this@ImageActivity, firstFacePath!!, object : HttpCallback {
                     override fun onSuccess() {
@@ -651,7 +654,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun inPainting() {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.inPainting(this@ImageActivity, firstFacePath!!, select.selectAreaMap, object : HttpCallback {
                     override fun onSuccess() {
@@ -680,7 +683,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun bodySeg() {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.bodySeg(this@ImageActivity, firstFacePath!!, object : HttpCallback {
                     override fun onSuccess() {
@@ -709,7 +712,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun ageTrans(number: Int) {
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.ageTrans(this@ImageActivity, Uri.fromFile(File(firstFacePath!!)), number, object : HttpCallback {
                     override fun onSuccess() {
@@ -749,7 +752,7 @@ class ImageActivity : BaseActivity() {
         }
 
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.genderTrans(this@ImageActivity, Uri.fromFile(File(firstFacePath!!)), value, object : HttpCallback {
                     override fun onSuccess() {
@@ -784,7 +787,7 @@ class ImageActivity : BaseActivity() {
         }
 
         if (firstFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.morph(this@ImageActivity, uploadList, object : HttpCallback {
                     override fun onSuccess() {
@@ -813,7 +816,7 @@ class ImageActivity : BaseActivity() {
      */
     private fun faceMerge() {
         if (firstFacePath != null && secondFacePath != null) {
-            LogReportManager.logReport(text, "使用成功", LogReportManager.LogType.OPERATION)
+            LogReportManager.logReport(reportTitle, "使用成功", LogReportManager.LogType.OPERATION)
             launch(Dispatchers.IO) {
                 ImageManager.faceMerge(this@ImageActivity, firstFacePath!!, secondFacePath!!, object : HttpCallback {
                     override fun onSuccess() {

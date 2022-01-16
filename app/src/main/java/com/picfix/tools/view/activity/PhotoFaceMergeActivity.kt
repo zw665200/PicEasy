@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.picfix.tools.R
 import com.picfix.tools.config.Constant
 import com.picfix.tools.controller.ImageManager
+import com.picfix.tools.controller.LogReportManager
 import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
 
@@ -54,6 +55,8 @@ class PhotoFaceMergeActivity : BaseActivity() {
 
     override fun initData() {
         choosePic(0)
+
+        LogReportManager.logReport("人脸融合", "访问页面", LogReportManager.LogType.OPERATION)
     }
 
     private fun choosePic(index: Int) {
@@ -89,6 +92,8 @@ class PhotoFaceMergeActivity : BaseActivity() {
         intent.data = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         intent.type = "image/*"
         startActivityForResult(intent, 0x1001)
+
+        LogReportManager.logReport("性别转换", "打开相册", LogReportManager.LogType.OPERATION)
     }
 
     private fun toImagePage(uri: Uri) {

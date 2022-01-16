@@ -169,10 +169,11 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_pic_with_shadow.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/layout_progressbar.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/layout_second_bottom.xml" value="0.5588541666666667" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_resize.xml" value="0.5604166666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

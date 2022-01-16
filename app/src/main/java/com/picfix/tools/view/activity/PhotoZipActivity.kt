@@ -93,6 +93,8 @@ class PhotoZipActivity : BaseActivity() {
         intent.data = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         intent.type = "image/*"
         startActivityForResult(intent, 0x1001)
+
+        LogReportManager.logReport("图片压缩", "打开相册", LogReportManager.LogType.OPERATION)
     }
 
     @SuppressLint("SetTextI18n")

@@ -117,6 +117,8 @@ class PhotoFormatTransActivity : BaseActivity() {
         intent.data = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         intent.type = "image/*"
         startActivityForResult(intent, 0x1001)
+
+        LogReportManager.logReport("图片格式转换", "打开相册", LogReportManager.LogType.OPERATION)
     }
 
     private fun checkFileSize(uri: Uri) {

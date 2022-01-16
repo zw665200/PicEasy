@@ -72,6 +72,7 @@ open class FMine : BaseFragment() {
             requireActivity().window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             requireActivity().window.statusBarColor = ContextCompat.getColor(requireActivity(), R.color.color_light_white)
         }
+
     }
 
     override fun click(v: View?) {

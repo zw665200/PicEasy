@@ -10,6 +10,7 @@ import android.widget.ImageView
 import com.picfix.tools.R
 import com.picfix.tools.config.Constant
 import com.picfix.tools.controller.ImageManager
+import com.picfix.tools.controller.LogReportManager
 import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
 import com.picfix.tools.view.views.MoveViewByViewDragHelper
@@ -64,6 +65,8 @@ class PhotoDefinitionActivity : BaseActivity() {
 
     override fun initData() {
         choosePic(0)
+
+        LogReportManager.logReport("清晰度增强", "访问页面", LogReportManager.LogType.OPERATION)
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -122,6 +125,8 @@ class PhotoDefinitionActivity : BaseActivity() {
         intent.data = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         intent.type = "image/*"
         startActivityForResult(intent, 0x1001)
+
+        LogReportManager.logReport("清晰度增强", "打开相册", LogReportManager.LogType.OPERATION)
     }
 
     private fun toImagePage(uri: Uri) {

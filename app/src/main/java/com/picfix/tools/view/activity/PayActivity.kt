@@ -26,6 +26,7 @@ import com.picfix.tools.bean.FileBean
 import com.picfix.tools.bean.MenuResource
 import com.picfix.tools.callback.DialogCallback
 import com.picfix.tools.callback.PayCallback
+import com.picfix.tools.controller.LogReportManager
 import com.picfix.tools.controller.MediaPlayer
 import com.picfix.tools.controller.PayManager
 import com.picfix.tools.utils.AppUtil
@@ -201,6 +202,8 @@ class PayActivity : BaseActivity() {
         }
 
         doPay(c)
+
+        LogReportManager.logReport("支付页", "发起支付$($currentPrice)", LogReportManager.LogType.OPERATION)
     }
 
 
@@ -247,6 +250,7 @@ class PayActivity : BaseActivity() {
     override fun onBackPressed() {
         QuitDialog(this, getString(R.string.quite_title), object : DialogCallback {
             override fun onSuccess(file: FileBean) {
+                LogReportManager.logReport("支付页", "退出页面", LogReportManager.LogType.OPERATION)
                 finish()
             }
 
