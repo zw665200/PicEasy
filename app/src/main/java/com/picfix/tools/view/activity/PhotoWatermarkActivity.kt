@@ -3,12 +3,18 @@ package com.picfix.tools.view.activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Bundle
 import android.provider.MediaStore
 import android.view.MotionEvent
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
+import com.appsflyer.AFInAppEventParameterName
+import com.appsflyer.AFInAppEventType
+import com.appsflyer.AppsFlyerLib
 import com.bumptech.glide.Glide
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
 import com.picfix.tools.config.Constant
 import com.picfix.tools.controller.ImageManager
@@ -18,6 +24,7 @@ import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
 import com.picfix.tools.view.views.MoveViewByViewDragHelper
 import com.picfix.tools.view.views.TestView
+import java.util.HashMap
 
 
 class PhotoWatermarkActivity : BaseActivity() {
@@ -71,6 +78,7 @@ class PhotoWatermarkActivity : BaseActivity() {
         choosePic(0)
 
         LogReportManager.logReport("图片去遮挡", "访问页面", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("visit", "operation")
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -131,6 +139,7 @@ class PhotoWatermarkActivity : BaseActivity() {
         startActivityForResult(intent, 0x1001)
 
         LogReportManager.logReport("图片去遮挡", "打开相册", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("open_album", "operation")
     }
 
     private fun toImagePage(uri: Uri) {
@@ -181,6 +190,18 @@ class PhotoWatermarkActivity : BaseActivity() {
         mList.clear()
         uploadList.clear()
 
+    }
+
+    private fun firebaseAnalytics(key: String, value: String) {
+        val bundle = Bundle()
+        bundle.putString(key, value)
+        Firebase.analytics.logEvent("page_remove_obstructions", bundle)
+
+        val eventValues = HashMap<String, Any>()
+        eventValues[AFInAppEventParameterName.CONTENT] = "page_remove_obstructions"
+        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
+        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
+        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
     }
 
 }

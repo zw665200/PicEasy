@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.*
@@ -14,7 +15,12 @@ import androidx.appcompat.widget.AppCompatSpinner
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.appsflyer.AFInAppEventParameterName
+import com.appsflyer.AFInAppEventType
+import com.appsflyer.AppsFlyerLib
 import com.bumptech.glide.Glide
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
 import com.picfix.tools.adapter.DataAdapter
 import com.picfix.tools.callback.Callback
@@ -36,6 +42,7 @@ import kotlinx.android.synthetic.main.item_pic_feedback.view.*
 import kotlinx.android.synthetic.main.rv_choose_account_item.view.*
 import kotlinx.coroutines.*
 import java.io.File
+import java.util.HashMap
 
 class ImageActivity : BaseActivity() {
     private lateinit var back: ImageView
@@ -201,6 +208,7 @@ class ImageActivity : BaseActivity() {
 
             title.text = text
             LogReportManager.logReport("图片处理页", "访问页面", LogReportManager.LogType.OPERATION)
+            firebaseAnalytics("visit", "operation")
 
         }
     }
@@ -331,8 +339,6 @@ class ImageActivity : BaseActivity() {
         intent.data = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         intent.type = "image/*"
         startActivityForResult(intent, requestCode)
-
-        LogReportManager.logReport(reportTitle, "打开相册", LogReportManager.LogType.OPERATION)
     }
 
     private fun checkPay(pay: () -> Unit, notPay: () -> Unit) {
@@ -352,7 +358,6 @@ class ImageActivity : BaseActivity() {
             return
         }
 
-        LogReportManager.logReport("图片处理页", "点击了处理", LogReportManager.LogType.OPERATION)
 
         checkPay({
             if (from != null) {
@@ -901,6 +906,18 @@ class ImageActivity : BaseActivity() {
                 }
             }
         }
+    }
+
+    private fun firebaseAnalytics(key: String, value: String) {
+        val bundle = Bundle()
+        bundle.putString(key, value)
+        Firebase.analytics.logEvent("page_image_task", bundle)
+
+        val eventValues = HashMap<String, Any>()
+        eventValues[AFInAppEventParameterName.CONTENT] = "page_image_task"
+        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
+        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
+        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
     }
 
 

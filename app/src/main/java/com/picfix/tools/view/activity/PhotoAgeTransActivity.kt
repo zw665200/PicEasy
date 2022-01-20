@@ -2,26 +2,37 @@ package com.picfix.tools.view.activity
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
+import com.appsflyer.AFInAppEventParameterName
+import com.appsflyer.AFInAppEventType
+import com.appsflyer.AppsFlyerLib
 import com.bumptech.glide.Glide
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
 import com.picfix.tools.config.Constant
 import com.picfix.tools.controller.ImageManager
 import com.picfix.tools.controller.LogReportManager
 import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
+import com.picfix.tools.view.views.MoveViewByViewDragHelper
+import java.util.HashMap
 
 
 class PhotoAgeTransActivity : BaseActivity() {
     private lateinit var back: ImageView
     private lateinit var bigPic: ImageView
+    private lateinit var bigPicBefore: ImageView
     private lateinit var firstPic: ImageView
     private lateinit var secondPic: ImageView
     private lateinit var camera: Button
     private lateinit var album: Button
+    private lateinit var dynamicLayout: FrameLayout
+    private lateinit var pointer: MoveViewByViewDragHelper
     private var value = ""
     private var mCameraUri: Uri? = null
 
@@ -37,6 +48,9 @@ class PhotoAgeTransActivity : BaseActivity() {
         bigPic = findViewById(R.id.big_pic)
         firstPic = findViewById(R.id.first_pic)
         secondPic = findViewById(R.id.second_pic)
+        bigPicBefore = findViewById(R.id.big_pic_before)
+        dynamicLayout = findViewById(R.id.dynamic_layout)
+        pointer = findViewById(R.id.point_move)
 
         firstLayout = findViewById(R.id.before_first_check)
         secondLayout = findViewById(R.id.before_second_check)
@@ -57,6 +71,27 @@ class PhotoAgeTransActivity : BaseActivity() {
         choosePic(0)
 
         LogReportManager.logReport("年龄变换", "访问页面", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("visit", "operation")
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            val width = bigPic.width
+            val height = bigPic.height
+
+            val layoutParam = bigPicBefore.layoutParams
+            layoutParam.width = width
+            layoutParam.height = height
+            bigPicBefore.layoutParams = layoutParam
+
+            val dynamicLayoutParam = dynamicLayout.layoutParams
+            dynamicLayoutParam.width = width / 2
+            dynamicLayoutParam.height = height
+            dynamicLayout.layoutParams = dynamicLayoutParam
+
+            pointer.setLayout(dynamicLayout, width / 2)
+        }
     }
 
     private fun choosePic(index: Int) {
@@ -65,14 +100,17 @@ class PhotoAgeTransActivity : BaseActivity() {
                 firstLayout.setBackgroundResource(R.drawable.shape_rectangle_orange)
                 secondLayout.setBackgroundResource(R.drawable.shape_corner_white)
                 bigPic.setImageResource(R.drawable.iv_age_trans_after_1)
+                bigPicBefore.setImageResource(R.drawable.iv_age_trans_before_1)
             }
             1 -> {
                 firstLayout.setBackgroundResource(R.drawable.shape_corner_white)
                 secondLayout.setBackgroundResource(R.drawable.shape_rectangle_orange)
                 bigPic.setImageResource(R.drawable.iv_age_trans_after_2)
+                bigPicBefore.setImageResource(R.drawable.iv_age_trans_before_2)
             }
         }
     }
+
 
     private fun takePhoto() {
         ImageManager.checkPermission(this) { that ->
@@ -94,6 +132,7 @@ class PhotoAgeTransActivity : BaseActivity() {
         startActivityForResult(intent, 0x1001)
 
         LogReportManager.logReport("年龄变换", "打开相册", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("open_album", "operation")
     }
 
     private fun toImagePage(uri: Uri) {
@@ -135,6 +174,18 @@ class PhotoAgeTransActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
 
+    }
+
+    private fun firebaseAnalytics(key: String, value: String) {
+        val bundle = Bundle()
+        bundle.putString(key, value)
+        Firebase.analytics.logEvent("page_age_conversion", bundle)
+
+        val eventValues = HashMap<String, Any>()
+        eventValues[AFInAppEventParameterName.CONTENT] = "page_age_conversion"
+        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
+        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
+        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
     }
 
 }

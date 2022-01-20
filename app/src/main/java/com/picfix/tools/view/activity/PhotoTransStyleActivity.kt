@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
@@ -12,7 +13,12 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.appsflyer.AFInAppEventParameterName
+import com.appsflyer.AFInAppEventType
+import com.appsflyer.AppsFlyerLib
 import com.bumptech.glide.Glide
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
 import com.picfix.tools.adapter.DataAdapter
 import com.picfix.tools.bean.Resource
@@ -23,6 +29,7 @@ import com.picfix.tools.utils.AppUtil
 import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
 import kotlinx.android.synthetic.main.item_pic_with_shadow.view.*
+import java.util.HashMap
 
 
 class PhotoTransStyleActivity : BaseActivity() {
@@ -65,6 +72,7 @@ class PhotoTransStyleActivity : BaseActivity() {
         initRecyclerView()
 
         LogReportManager.logReport("图片风格转换", "访问页面", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("visit", "operation")
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -134,6 +142,7 @@ class PhotoTransStyleActivity : BaseActivity() {
         startActivityForResult(intent, 0x1001)
 
         LogReportManager.logReport("图片风格转换", "打开相册", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("open_album", "operation")
     }
 
     private fun toImagePage(uri: Uri) {
@@ -178,6 +187,18 @@ class PhotoTransStyleActivity : BaseActivity() {
         mList.clear()
         uploadList.clear()
 
+    }
+
+    private fun firebaseAnalytics(key: String, value: String) {
+        val bundle = Bundle()
+        bundle.putString(key, value)
+        Firebase.analytics.logEvent("page_style_shift", bundle)
+
+        val eventValues = HashMap<String, Any>()
+        eventValues[AFInAppEventParameterName.CONTENT] = "page_style_shift"
+        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
+        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
+        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
     }
 
 }

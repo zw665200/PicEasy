@@ -2,16 +2,23 @@ package com.picfix.tools.view.activity
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
+import com.appsflyer.AFInAppEventParameterName
+import com.appsflyer.AFInAppEventType
+import com.appsflyer.AppsFlyerLib
 import com.bumptech.glide.Glide
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
 import com.picfix.tools.config.Constant
 import com.picfix.tools.controller.ImageManager
 import com.picfix.tools.controller.LogReportManager
 import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
+import java.util.HashMap
 
 
 class PhotoMorphActivity : BaseActivity() {
@@ -44,6 +51,7 @@ class PhotoMorphActivity : BaseActivity() {
         Glide.with(this).load(R.drawable.iv_sample_morph).into(bigPic)
 
         LogReportManager.logReport("人像渐变", "访问页面", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("visit", "operation")
     }
 
     private fun takePhoto() {
@@ -66,6 +74,7 @@ class PhotoMorphActivity : BaseActivity() {
         startActivityForResult(intent, 0x1001)
 
         LogReportManager.logReport("人像渐变", "打开相册", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("open_album", "operation")
     }
 
     private fun toImagePage(uri: Uri) {
@@ -101,6 +110,18 @@ class PhotoMorphActivity : BaseActivity() {
                 checkFileSize(mCameraUri!!)
             }
         }
+    }
+
+    private fun firebaseAnalytics(key: String, value: String) {
+        val bundle = Bundle()
+        bundle.putString(key, value)
+        Firebase.analytics.logEvent("page_portrait_gradient", bundle)
+
+        val eventValues = HashMap<String, Any>()
+        eventValues[AFInAppEventParameterName.CONTENT] = "page_portrait_gradient"
+        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
+        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
+        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
     }
 
 

@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "667796146489",
+    "project_id": "piceasy-bc9ab",
+    "storage_bucket": "piceasy-bc9ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667796146489:android:6d8076157515a9327200e8",
+        "android_client_info": {
+          "package_name": "com.piceasy.tool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667796146489-v30i2g24i9vhu2p13ub84bu6fcgug2nl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.piceasy.tool",
+            "certificate_hash": "c2341e2080e94bb6f0e7a499c6038652cabd3e3b"
+          }
+        },
+        {
+          "client_id": "667796146489-944e4vd3if2s1urvhmnqacqck1uq3frm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQhtSm2ZgSEMIYFwtS4WHEIV_DS8n4RBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667796146489-944e4vd3if2s1urvhmnqacqck1uq3frm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "667796146489-lr66pncpq35ih0h1dt2iqnhn2m0if6a6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ql.recover.photoRecover",
+                "app_store_id": "1601368414"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667796146489:android:894acbcd788849417200e8",
+        "android_client_info": {
+          "package_name": "com.piceasy.tools"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667796146489-944e4vd3if2s1urvhmnqacqck1uq3frm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQhtSm2ZgSEMIYFwtS4WHEIV_DS8n4RBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667796146489-944e4vd3if2s1urvhmnqacqck1uq3frm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "667796146489-lr66pncpq35ih0h1dt2iqnhn2m0if6a6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ql.recover.photoRecover",
+                "app_store_id": "1601368414"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

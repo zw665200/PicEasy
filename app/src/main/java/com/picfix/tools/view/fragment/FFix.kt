@@ -2,6 +2,7 @@ package com.picfix.tools.view.fragment
 
 import android.content.Intent
 import android.os.*
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
 import com.picfix.tools.adapter.DataAdapter
 import com.picfix.tools.bean.Resource
@@ -67,8 +71,6 @@ open class FFix : BaseFragment() {
             requireActivity().window.statusBarColor = ContextCompat.getColor(requireActivity(), R.color.color_light_white)
         }
 
-        JLog.i("time = ${System.currentTimeMillis()}")
-
     }
 
 
@@ -78,7 +80,7 @@ open class FFix : BaseFragment() {
     private fun initOtherRecycleView() {
         val otherPics = mutableListOf<Resource>()
         otherPics.add(Resource("face_merge", R.drawable.home_face_fusion, "Face Fusion"))
-        otherPics.add(Resource("colorize", R.drawable.home_colorizer, "Colorized"))
+        otherPics.add(Resource("colorize", R.drawable.home_colorizer, "Colorize"))
         otherPics.add(Resource("zip", R.drawable.home_compression, "Compression"))
 
         val otherAdapter = DataAdapter.Builder<Resource>()

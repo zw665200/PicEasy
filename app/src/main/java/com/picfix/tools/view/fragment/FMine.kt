@@ -72,7 +72,6 @@ open class FMine : BaseFragment() {
             requireActivity().window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             requireActivity().window.statusBarColor = ContextCompat.getColor(requireActivity(), R.color.color_light_white)
         }
-
     }
 
     override fun click(v: View?) {
@@ -267,6 +266,10 @@ open class FMine : BaseFragment() {
             title.text = getString(R.string.mine_login)
             level.visibility = View.GONE
             logout.visibility = View.GONE
+
+            vipTitle.text = "Update To Member"
+            vipDes.text = "enjoy more benefits"
+            buy.text = "BUY NOW"
 
             val mmkv = MMKV.defaultMMKV()
             val userInfo = mmkv?.decodeParcelable("userInfo", UserInfo::class.java)

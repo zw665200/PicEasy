@@ -37,6 +37,9 @@ import android.content.IntentSender
 import android.content.IntentSender.SendIntentException
 
 import androidx.core.app.ActivityCompat.startIntentSenderForResult
+import com.appsflyer.AFInAppEventParameterName
+import com.appsflyer.AFInAppEventType
+import com.appsflyer.AppsFlyerLib
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
@@ -146,7 +149,7 @@ class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
 
 
 //                if (token == null) {
-                    signOut()
+                signOut()
 //                } else {
 //                    getAccessToken(token)
 //                }
@@ -275,6 +278,12 @@ class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
                     val bundle = Bundle()
                     bundle.putString(FirebaseAnalytics.Param.METHOD, "Google")
                     Firebase.analytics.logEvent(FirebaseAnalytics.Event.LOGIN, bundle)
+
+                    //appsflyer login
+                    val eventValues = HashMap<String, Any>()
+                    eventValues[AFInAppEventParameterName.CUSTOMER_USER_ID] = it.id
+                    eventValues[AFInAppEventParameterName.CONTENT] = "Google"
+                    AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.LOGIN, eventValues)
 
                     ToastUtil.showShort(this, getString(R.string.login_success))
 

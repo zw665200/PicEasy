@@ -12,6 +12,10 @@ import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.appsflyer.AFInAppEventParameterName
+import com.appsflyer.AFInAppEventType
+import com.appsflyer.AFInAppEventType.CONTENT_VIEW
+import com.appsflyer.AppsFlyerLib
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.PlaybackException
@@ -26,6 +30,7 @@ import com.picfix.tools.bean.FileBean
 import com.picfix.tools.bean.MenuResource
 import com.picfix.tools.callback.DialogCallback
 import com.picfix.tools.callback.PayCallback
+import com.picfix.tools.config.Constant
 import com.picfix.tools.controller.LogReportManager
 import com.picfix.tools.controller.MediaPlayer
 import com.picfix.tools.controller.PayManager
@@ -85,6 +90,9 @@ class PayActivity : BaseActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = ContextCompat.getColor(this, R.color.transparent)
         }
+
+        LogReportManager.logReport("支付页", "页面访问", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("visit", "operation")
 
     }
 
@@ -204,20 +212,31 @@ class PayActivity : BaseActivity() {
         doPay(c)
 
         LogReportManager.logReport("支付页", "发起支付$($currentPrice)", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("start_pay", "$${currentPrice}")
     }
 
 
     private fun doPay(c: Activity) {
 
+
         PayManager.getInstance().doGoogleFastPay(c, currentproductId, object : PayCallback {
             override fun success() {
                 openPaySuccessDialog()
-                //firebase login
+                //firebase pay
                 val bundle = Bundle()
                 bundle.putString(FirebaseAnalytics.Param.CURRENCY, "USD")
                 bundle.putFloat(FirebaseAnalytics.Param.VALUE, currentPrice)
                 bundle.putString(FirebaseAnalytics.Param.AFFILIATION, "Google Play")
                 Firebase.analytics.logEvent(FirebaseAnalytics.Event.PURCHASE, bundle)
+
+                //appsFlyer pay
+                val eventValues = HashMap<String, Any>()
+                eventValues[AFInAppEventParameterName.PURCHASE_CURRENCY] = "USD"
+                eventValues[AFInAppEventParameterName.REVENUE] = currentPrice
+                eventValues[AFInAppEventParameterName.CUSTOMER_USER_ID] = Constant.USER_ID
+                eventValues[AFInAppEventParameterName.CONTENT_ID] = "Google Play"
+                eventValues[AFInAppEventParameterName.CONTENT_TYPE] = "in_app_purchase"
+                AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.PURCHASE, eventValues)
             }
 
             override fun progress(orderId: String) {
@@ -227,6 +246,7 @@ class PayActivity : BaseActivity() {
             override fun failed(msg: String) {
                 launch(Dispatchers.Main) {
                     ToastUtil.showShort(c, msg)
+                    firebaseAnalytics("pay_cancel", "operation")
                 }
             }
         })
@@ -251,6 +271,7 @@ class PayActivity : BaseActivity() {
         QuitDialog(this, getString(R.string.quite_title), object : DialogCallback {
             override fun onSuccess(file: FileBean) {
                 LogReportManager.logReport("支付页", "退出页面", LogReportManager.LogType.OPERATION)
+                firebaseAnalytics("quit_page", "operation")
                 finish()
             }
 
@@ -262,6 +283,18 @@ class PayActivity : BaseActivity() {
     override fun onStop() {
         super.onStop()
         MediaPlayer.stop()
+    }
+
+    private fun firebaseAnalytics(key: String, value: String) {
+        val bundle = Bundle()
+        bundle.putString(key, value)
+        Firebase.analytics.logEvent("page_payment", bundle)
+
+        val eventValues = HashMap<String, Any>()
+        eventValues[AFInAppEventParameterName.CONTENT] = "page_payment"
+        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
+        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
+        AppsFlyerLib.getInstance().logEvent(applicationContext, CONTENT_VIEW, eventValues)
     }
 
 

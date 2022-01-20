@@ -4,22 +4,31 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
+import com.appsflyer.AFInAppEventParameterName
+import com.appsflyer.AFInAppEventType
+import com.appsflyer.AppsFlyerLib
 import com.bumptech.glide.Glide
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
 import com.picfix.tools.config.Constant
 import com.picfix.tools.controller.ImageManager
 import com.picfix.tools.controller.LogReportManager
 import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
+import com.picfix.tools.view.views.MoveViewByViewDragHelper
+import java.util.HashMap
 
 
 class PhotoCartoonActivity : BaseActivity() {
     private lateinit var back: ImageView
     private lateinit var bigPic: ImageView
+    private lateinit var bigPicBefore: ImageView
     private lateinit var firstPic: ImageView
     private lateinit var secondPic: ImageView
     private lateinit var thirdPic: ImageView
@@ -27,6 +36,8 @@ class PhotoCartoonActivity : BaseActivity() {
     private lateinit var album: Button
     private var mList = arrayListOf<Bitmap>()
     private var uploadList = arrayListOf<Uri>()
+    private lateinit var dynamicLayout: FrameLayout
+    private lateinit var pointer: MoveViewByViewDragHelper
     private var value = ""
     private var mCameraUri: Uri? = null
 
@@ -41,9 +52,12 @@ class PhotoCartoonActivity : BaseActivity() {
     override fun initView() {
         back = findViewById(R.id.iv_back)
         bigPic = findViewById(R.id.big_pic)
+        bigPicBefore = findViewById(R.id.big_pic_before)
         firstPic = findViewById(R.id.first_pic)
         secondPic = findViewById(R.id.second_pic)
         thirdPic = findViewById(R.id.third_pic)
+        dynamicLayout = findViewById(R.id.dynamic_layout)
+        pointer = findViewById(R.id.point_move)
 
         firstLayout = findViewById(R.id.before_first_check)
         secondLayout = findViewById(R.id.before_second_check)
@@ -66,6 +80,28 @@ class PhotoCartoonActivity : BaseActivity() {
         choosePic(0)
 
         LogReportManager.logReport("人像动漫化", "访问页面", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("visit", "operation")
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            val width = bigPic.width
+            val height = bigPic.height
+
+            val layoutParam = bigPicBefore.layoutParams
+            layoutParam.width = width
+            layoutParam.height = height
+            bigPicBefore.layoutParams = layoutParam
+
+            val dynamicLayoutParam = dynamicLayout.layoutParams
+            dynamicLayoutParam.width = width / 2
+            dynamicLayoutParam.height = height
+            dynamicLayout.layoutParams = dynamicLayoutParam
+
+            pointer.setLayout(dynamicLayout, width / 2)
+        }
+
     }
 
     private fun choosePic(index: Int) {
@@ -75,18 +111,21 @@ class PhotoCartoonActivity : BaseActivity() {
                 secondLayout.setBackgroundResource(R.drawable.shape_corner_white)
                 thirdLayout.setBackgroundResource(R.drawable.shape_corner_white)
                 bigPic.setImageResource(R.drawable.iv_cartoon_after_4)
+                bigPicBefore.setImageResource(R.drawable.iv_cartoon_before_4)
             }
             1 -> {
                 firstLayout.setBackgroundResource(R.drawable.shape_corner_white)
                 secondLayout.setBackgroundResource(R.drawable.shape_rectangle_orange)
                 thirdLayout.setBackgroundResource(R.drawable.shape_corner_white)
                 bigPic.setImageResource(R.drawable.iv_cartoon_after_1)
+                bigPicBefore.setImageResource(R.drawable.iv_cartoon_before_1)
             }
             2 -> {
                 firstLayout.setBackgroundResource(R.drawable.shape_corner_white)
                 secondLayout.setBackgroundResource(R.drawable.shape_corner_white)
                 thirdLayout.setBackgroundResource(R.drawable.shape_rectangle_orange)
                 bigPic.setImageResource(R.drawable.iv_cartoon_after_2)
+                bigPicBefore.setImageResource(R.drawable.iv_cartoon_before_2)
             }
         }
     }
@@ -111,6 +150,7 @@ class PhotoCartoonActivity : BaseActivity() {
         startActivityForResult(intent, 0x1001)
 
         LogReportManager.logReport("人像动漫化", "打开相册", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("open_album", "operation")
     }
 
     private fun toImagePage(uri: Uri) {
@@ -171,6 +211,18 @@ class PhotoCartoonActivity : BaseActivity() {
         mList.clear()
         uploadList.clear()
 
+    }
+
+    private fun firebaseAnalytics(key: String, value: String) {
+        val bundle = Bundle()
+        bundle.putString(key, value)
+        Firebase.analytics.logEvent("page_cartoon", bundle)
+
+        val eventValues = HashMap<String, Any>()
+        eventValues[AFInAppEventParameterName.CONTENT] = "page_cartoon"
+        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
+        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
+        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
     }
 
 }

@@ -5,14 +5,20 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.net.Uri
+import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.*
 import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.core.content.ContextCompat
+import com.appsflyer.AFInAppEventParameterName
+import com.appsflyer.AFInAppEventType
+import com.appsflyer.AppsFlyerLib
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
 import com.picfix.tools.callback.Callback
 import com.picfix.tools.callback.HttpCallback
@@ -27,6 +33,7 @@ import com.picfix.tools.view.base.BaseActivity
 import com.picfix.tools.view.views.SaveSuccessDialog
 import com.tencent.mmkv.MMKV
 import java.io.File
+import java.util.HashMap
 
 
 class PhotoZipActivity : BaseActivity() {
@@ -85,6 +92,7 @@ class PhotoZipActivity : BaseActivity() {
 
     override fun initData() {
         LogReportManager.logReport("图片压缩", "访问页面", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("visit", "operation")
     }
 
     private fun chooseAlbum() {
@@ -95,6 +103,7 @@ class PhotoZipActivity : BaseActivity() {
         startActivityForResult(intent, 0x1001)
 
         LogReportManager.logReport("图片压缩", "打开相册", LogReportManager.LogType.OPERATION)
+        firebaseAnalytics("open_album", "operation")
     }
 
     @SuppressLint("SetTextI18n")
@@ -231,6 +240,18 @@ class PhotoZipActivity : BaseActivity() {
                 }
             }
         }
+    }
+
+    private fun firebaseAnalytics(key: String, value: String) {
+        val bundle = Bundle()
+        bundle.putString(key, value)
+        Firebase.analytics.logEvent("page_compression", bundle)
+
+        val eventValues = HashMap<String, Any>()
+        eventValues[AFInAppEventParameterName.CONTENT] = "page_compression"
+        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
+        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
+        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
     }
 
 }

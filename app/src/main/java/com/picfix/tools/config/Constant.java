@@ -97,4 +97,7 @@ public class Constant {
     public static String TENCENT_APP_ID = "wx402f05656134648b";
     public static String TENCENT_MINI_PROGRAM_APP_ID = "gh_72629534a52d";
     public static String TENCENT_PARTNER_ID = "1605572449";
+
+    //appsflyer
+    public static String APPS_FLYER_KEY = "DPLpZK4xzXEXfi9gcgGgpm";
 }

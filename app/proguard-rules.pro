@@ -30,6 +30,9 @@
 -keep class com.tencent.wxop.** {*;}
 -keep class com.tencent.mm.sdk.** {*;}
 
+# appsFlyer
+-keep class com.appsflyer.** { *; }
+
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
