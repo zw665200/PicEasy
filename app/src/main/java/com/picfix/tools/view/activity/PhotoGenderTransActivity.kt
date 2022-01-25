@@ -153,9 +153,11 @@ class PhotoGenderTransActivity : BaseActivity() {
 
         val eventValues = HashMap<String, Any>()
         eventValues[AFInAppEventParameterName.CONTENT] = "page_gender_conversion"
-        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
-        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
-        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
+        if (key == "visit") {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, "page_gender_conversion", eventValues)
+        } else {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, key, eventValues)
+        }
     }
 
 }

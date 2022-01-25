@@ -119,9 +119,11 @@ class PhotoMorphActivity : BaseActivity() {
 
         val eventValues = HashMap<String, Any>()
         eventValues[AFInAppEventParameterName.CONTENT] = "page_portrait_gradient"
-        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
-        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
-        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
+        if (key == "visit") {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, "page_portrait_gradient", eventValues)
+        } else {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, key, eventValues)
+        }
     }
 
 

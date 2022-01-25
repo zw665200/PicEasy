@@ -3,6 +3,8 @@ package com.picfix.tools.config;
 
 import android.os.Handler;
 
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+
 
 public class Constant {
 
@@ -18,10 +20,12 @@ public class Constant {
     public static final String ROM_VIVO = "VIVO";
     public static final String ROM_OTHER = "OTHER";
     public static String CLIENT_TOKEN = "";
-    public static String QUEST_TOKEN = "questToken";
+    public static String QUEST_TOKEN = "";
     public static String USER_NAME = "";
     public static String USER_ID = "";
+    public static String USER_ICON = "";
     public static Boolean ScanStop = false;
+    public static IWXAPI api = null;
 
     public static Boolean OCPC = true;
     public static Boolean AD_OPENNING = false;
@@ -43,6 +47,7 @@ public class Constant {
     public static String PHOTO_FIX = "photofix";
     public static String PHOTO_FIX_TIMES = "times";
     public static String PHOTO_HAND_FIX = "atf";
+    public static String PHOTO_HAND_SUBSCRIPTION = "piceasy_subscription";
 
     //service_expire
     public static String EXPIRE_TYPE_FOREVER = "2";

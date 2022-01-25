@@ -32,6 +32,7 @@ public class MoveViewByViewDragHelper extends LinearLayout {
     private ViewDragHelper mViewDragHelper;
     private FrameLayout dynamicLayout;
     private int dWidth = 0;
+    private int currentWidth = 0;
 
     public MoveViewByViewDragHelper(Context context) {
         super(context);
@@ -71,7 +72,7 @@ public class MoveViewByViewDragHelper extends LinearLayout {
 
     public void setLayout(FrameLayout layout, int width) {
         dynamicLayout = layout;
-//        dWidth = width;
+        dWidth = width;
     }
 
     @Override
@@ -100,7 +101,7 @@ public class MoveViewByViewDragHelper extends LinearLayout {
             mLeft = child.getLeft();
             mTop = child.getTop();
 
-            dWidth = mWidth;
+//            dWidth = mWidth;
 
             JLog.i("left =" + mLeft);
             return true;
@@ -111,7 +112,13 @@ public class MoveViewByViewDragHelper extends LinearLayout {
             if (child == getChildAt(0) || child == getChildAt(2)) {
                 JLog.i("left2 =" + left);
                 ViewGroup.LayoutParams layoutParams = dynamicLayout.getLayoutParams();
-                layoutParams.width = left;
+                if (left >= mLeft) {
+                    currentWidth = dWidth + (left - mLeft);
+                    layoutParams.width = dWidth + (left - mLeft);
+                } else {
+                    currentWidth = dWidth - (mLeft - left);
+                    layoutParams.width = dWidth - (mLeft - left);
+                }
                 dynamicLayout.setLayoutParams(layoutParams);
                 return left;
             }
@@ -129,8 +136,10 @@ public class MoveViewByViewDragHelper extends LinearLayout {
 
         @Override
         public void onViewReleased(@NonNull View releasedChild, float xvel, float yvel) {
+            JLog.i("finger up");
+            dWidth = currentWidth;
             if (releasedChild == getChildAt(2)) {
-                Log.e("onViewReleased", "onViewReleased" + mLeft + "--" + mTop);
+                JLog.i("finger up");
                 //smoothSlideViewTo、settleCapturedViewAt、flingCapturedView这三个方法类似，在内部是用的ScrollerCompat来实现滑动的。
                 //需要重写computeScroll，使scroll生效
                 mViewDragHelper.settleCapturedViewAt(mLeft, mTop);

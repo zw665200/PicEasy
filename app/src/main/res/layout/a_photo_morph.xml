@@ -121,7 +121,7 @@
             android:layout_height="20dp"
             android:src="@drawable/round_1" />
 
-        <TextView
+        <com.picfix.tools.view.views.JustifyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_10"
@@ -146,7 +146,7 @@
             android:layout_height="20dp"
             android:src="@drawable/round_2" />
 
-        <TextView
+        <com.picfix.tools.view.views.JustifyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_10"

@@ -9,10 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.bumptech.glide.request.RequestOptions
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -41,6 +45,7 @@ import kotlinx.coroutines.launch
 open class FMine : BaseFragment() {
     private lateinit var title: TextView
     private lateinit var level: TextView
+    private lateinit var avatar: ImageView
     private lateinit var vipTitle: TextView
     private lateinit var vipDes: TextView
     private lateinit var logout: Button
@@ -56,6 +61,7 @@ open class FMine : BaseFragment() {
         buy = rootView.findViewById(R.id.buy)
         vipTitle = rootView.findViewById(R.id.vip_title)
         vipDes = rootView.findViewById(R.id.vip_des)
+        avatar = rootView.findViewById(R.id.user_avatar)
 
         title.setOnClickListener { checkLogin() }
         logout.setOnClickListener { logOut() }
@@ -97,6 +103,9 @@ open class FMine : BaseFragment() {
             level.text = "USER ID: ${Constant.USER_ID}"
             level.visibility = View.VISIBLE
             logout.visibility = View.VISIBLE
+            if (Constant.USER_ICON != "") {
+                Glide.with(this).load(Constant.USER_ICON).apply(RequestOptions.bitmapTransform(CircleCrop())).into(avatar)
+            }
             PayManager.getInstance().getPayList {
                 if (it.isNotEmpty()) {
                     for (order in it) {
@@ -104,8 +113,8 @@ open class FMine : BaseFragment() {
                             if (order.times != null) {
                                 val times = order.times
                                 if (times!! < 20) {
-                                    vipTitle.text = "Dear Member"
-                                    vipDes.text = "${20 - order.times!!} times available"
+                                    vipTitle.text = getString(R.string.mine_dear_member)
+                                    vipDes.text = "${20 - order.times!!} ${getString(R.string.mine_enjoy_times)}"
                                     buy.text = "VIP"
                                     level.visibility = View.VISIBLE
                                     return@getPayList
@@ -113,10 +122,10 @@ open class FMine : BaseFragment() {
                             }
                         }
 
-                        if (order.server_code == Constant.PHOTO_FIX) {
+                        if (order.server_code == Constant.PHOTO_FIX || order.server_code.contains("subscription")) {
                             when (order.expire_type) {
                                 else -> {
-                                    vipTitle.text = "Dear VIP Member"
+                                    vipTitle.text = getString(R.string.mine_dear_member)
                                     vipDes.text = "unlimited times"
                                     buy.text = "VIP"
                                     level.visibility = View.VISIBLE
@@ -152,7 +161,6 @@ open class FMine : BaseFragment() {
 
     private fun loadFunction() {
         val list = arrayListOf<Resource>()
-//        list.add(Resource("website", R.drawable.mine_website, getString(R.string.mine_website)))
         list.add(Resource("service", R.drawable.mine_help, getString(R.string.mine_service)))
         list.add(Resource("privacy", R.drawable.mine_privacy, getString(R.string.mine_privacy)))
         list.add(Resource("feedback", R.drawable.feedback, getString(R.string.mine_help)))
@@ -266,10 +274,11 @@ open class FMine : BaseFragment() {
             title.text = getString(R.string.mine_login)
             level.visibility = View.GONE
             logout.visibility = View.GONE
+            avatar.setImageResource(R.drawable.mine_icon)
 
-            vipTitle.text = "Update To Member"
-            vipDes.text = "enjoy more benefits"
-            buy.text = "BUY NOW"
+            vipTitle.text = getString(R.string.mine_update_to_member)
+            vipDes.text = getString(R.string.mine_enjoy_more_benefits)
+            buy.text = getString(R.string.mine_buy)
 
             val mmkv = MMKV.defaultMMKV()
             val userInfo = mmkv?.decodeParcelable("userInfo", UserInfo::class.java)

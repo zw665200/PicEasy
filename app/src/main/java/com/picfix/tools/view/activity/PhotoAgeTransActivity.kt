@@ -8,9 +8,7 @@ import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
 import com.appsflyer.AFInAppEventParameterName
-import com.appsflyer.AFInAppEventType
 import com.appsflyer.AppsFlyerLib
-import com.bumptech.glide.Glide
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
@@ -20,7 +18,7 @@ import com.picfix.tools.controller.LogReportManager
 import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
 import com.picfix.tools.view.views.MoveViewByViewDragHelper
-import java.util.HashMap
+import java.util.*
 
 
 class PhotoAgeTransActivity : BaseActivity() {
@@ -183,9 +181,11 @@ class PhotoAgeTransActivity : BaseActivity() {
 
         val eventValues = HashMap<String, Any>()
         eventValues[AFInAppEventParameterName.CONTENT] = "page_age_conversion"
-        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
-        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
-        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
+        if (key == "visit") {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, "page_age_conversion", eventValues)
+        } else {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, key, eventValues)
+        }
     }
 
 }

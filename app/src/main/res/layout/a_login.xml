@@ -74,12 +74,46 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_10"
-                android:text="Sign In Google"
+                android:text="@string/login_signin_google"
                 android:textColor="@color/color_white"
-                android:textSize="@dimen/sp_18"/>
+                android:textSize="@dimen/sp_16" />
 
         </LinearLayout>
 
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/sign_in_wechat"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_70"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:background="@drawable/shape_corner_black">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/wechat_login" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="@string/login_signin_wechat"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
 
     </FrameLayout>
 

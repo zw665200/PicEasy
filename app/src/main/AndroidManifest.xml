@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.picfix.tools">
 
     <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -40,7 +43,7 @@
         <activity
             android:name="com.picfix.tools.view.activity.SplashActivity"
             android:exported="true"
-            android:launchMode="standard"
+            android:screenOrientation="fullSensor"
             android:theme="@style/FullScreenAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,11 +55,6 @@
         <activity android:name="com.picfix.tools.view.base.BaseActivity" />
         <activity
             android:name="com.picfix.tools.view.activity.MainActivity"
-            android:alwaysRetainTaskState="true"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.picfix.tools.view.activity.CustomerServiceActivity"
             android:alwaysRetainTaskState="true"
             android:screenOrientation="portrait" />
 

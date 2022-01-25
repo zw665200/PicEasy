@@ -23,6 +23,6 @@ data class UserInfo(
     var city: String,
     var product_id: Int,
     var product_name: String,
-    var photo_times: Int?,
+    var photo_times: Int? = 0,
     var os_type: String
 ) : Parcelable

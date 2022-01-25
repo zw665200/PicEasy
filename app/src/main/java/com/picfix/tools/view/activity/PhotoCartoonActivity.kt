@@ -220,9 +220,11 @@ class PhotoCartoonActivity : BaseActivity() {
 
         val eventValues = HashMap<String, Any>()
         eventValues[AFInAppEventParameterName.CONTENT] = "page_cartoon"
-        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
-        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
-        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
+        if (key == "visit") {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, "page_cartoon", eventValues)
+        } else {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, key, eventValues)
+        }
     }
 
 }

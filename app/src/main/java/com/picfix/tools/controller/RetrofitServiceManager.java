@@ -7,6 +7,8 @@ import com.picfix.tools.http.ApiConfig;
 import com.picfix.tools.http.request.AccountDeleteService;
 import com.picfix.tools.http.request.AgeTransService;
 import com.picfix.tools.http.request.AliPayService;
+import com.picfix.tools.http.request.AtfPayService;
+import com.picfix.tools.http.request.BaseService;
 import com.picfix.tools.http.request.CartoonService;
 import com.picfix.tools.http.request.CheckPayService;
 import com.picfix.tools.http.request.ComplaintService;
@@ -24,7 +26,6 @@ import com.picfix.tools.http.request.OssService;
 import com.picfix.tools.http.request.PayStatusService;
 import com.picfix.tools.http.request.ReportService;
 import com.picfix.tools.http.request.ServiceListService;
-import com.picfix.tools.http.request.AtfPayService;
 import com.picfix.tools.http.request.TokenService;
 import com.picfix.tools.http.request.UserReportService;
 import com.picfix.tools.http.request.WechatPayService;
@@ -45,6 +46,7 @@ public class RetrofitServiceManager {
     private static final int DEFAULT_READ_TIME_OUT = 10;
     private Retrofit mRetrofit;
     private static RetrofitServiceManager mInstance;
+    private static volatile BaseService baseService = null;
     private static volatile LoginService userInfo = null;
     private static volatile TokenService token = null;
     private static volatile OrderService orderService = null;
@@ -89,8 +91,8 @@ public class RetrofitServiceManager {
         // 创建 OKHttpClient
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.connectTimeout(DEFAULT_TIME_OUT, TimeUnit.SECONDS);//连接超时时间
-        builder.writeTimeout(DEFAULT_READ_TIME_OUT, TimeUnit.SECONDS);//写操作 超时时间
-        builder.readTimeout(DEFAULT_READ_TIME_OUT, TimeUnit.SECONDS);//读操作超时时间
+        builder.writeTimeout(DEFAULT_READ_TIME_OUT, TimeUnit.SECONDS);
+        builder.readTimeout(DEFAULT_READ_TIME_OUT, TimeUnit.SECONDS);
         builder.hostnameVerifier(new AllowAllHostnameVerifier());
 //        builder.addInterceptor(new BaseUrlInterceptor());
 
@@ -114,8 +116,17 @@ public class RetrofitServiceManager {
                 .client(builder.build())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(ApiConfig.BASE_URL_1)
+                .baseUrl(ApiConfig.BASE_URL_3)
                 .build();
+    }
+
+    public BaseService getBaseService() {
+        if (baseService == null) {
+            synchronized (BaseService.class) {
+                baseService = mRetrofit.create(BaseService.class);
+            }
+        }
+        return baseService;
     }
 
     public LoginService getUserInfo() {

@@ -1,96 +1,31 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name">PicEasy</string>
-    <string name="tools">More Tools</string>
-
-    <!--login-->
-    <string name="login_success">登录成功</string>
-    <string name="login_failed">登录异常</string>
-    <string name="login_agree_01">我已阅读并同意</string>
-    <string name="login_agree_02">《用户协议》</string>
-    <string name="login_agree_03">以及</string>
-    <string name="login_agree_04">《隐私协议》</string>
+    <string name="tools">工具</string>
+    <string name="home">首页</string>
+    <string name="me">我的</string>
 
     <!-- home -->
-    <string name="home_title_01">AI Enhance Photo</string>
-    <string name="home_title_02">Photo Retouch</string>
-    <string name="home_content_01">Restore high-definition pictures</string>
-    <string name="home_content_02">Remove obstructions</string>
+    <string name="home_title_01">清晰度增强</string>
+    <string name="home_title_02">去除遮挡物</string>
+    <string name="home_content_01">AI智能生成高清照片</string>
+    <string name="home_content_02">AI智能去除遮挡物</string>
 
     <!--Splash-->
     <string name="splash_title">Best Photo Editer &amp; Enhance</string>
 
     <!--mine-->
-    <string name="mine_vip">我的VIP</string>
-    <string name="mine_website">官网网站</string>
-    <string name="mine_help">联系客服</string>
-    <string name="mine_feedback">投诉与退款</string>
-    <string name="mine_service">服务协议</string>
-    <string name="mine_privacy">隐私政策</string>
     <string name="mine_setting">其它服务</string>
-    <string name="mine_login">LOGIN</string>
-    <string name="mine_login_before_des">Guest</string>
-    <string name="mine_logout">Logout</string>
+    <string name="mine_login">立即登录</string>
+    <string name="mine_login_before_des">用户id</string>
+    <string name="mine_logout">登出</string>
 
     <!--setting-->
-    <string name="setting_about_us">关于我们</string>
     <string name="setting_about_us_des">关于我们，了解更多</string>
-    <string name="setting_clear_cache">清除缓存</string>
     <string name="setting_account_delete">账号注销</string>
     <string name="setting_clear_cache_des">账号永久注销</string>
 
-    <!--agreement-->
-    <string name="agreement_service">用户协议</string>
-    <string name="agreement_privacy">隐私协议</string>
-    <string name="agreement_agree">同意</string>
-    <string name="agreement_disagree">不同意</string>
-
-    <!--feedback-->
-    <string name="feedback">投诉与建议</string>
-    <string name="feedback_hint">请您输入您需要反馈的内容，如产品性能问题，请详细描述无法恢复的内容及有效的投诉理由，我们将会以您提交的内容描述进行审核。</string>
-    <string name="feedback_pay_account">请输入您用于支付的支付宝账号</string>
-    <string name="feedback_contact">请输入您的手机号(11位有效手机号)</string>
-    <string name="feedback_submit">提交</string>
-    <string name="feedback_img_content">上传图片（不超过3张 ,每张不大于1MB）</string>
-
     <!--customer service dialog-->
-    <string name="customer_service_title">服务协议和隐私政策</string>
     <string name="customer_service_refuse">暂不使用</string>
-    <string name="customer_service_agree">同意</string>
-    <string name="customer_service_agreement">欢迎您使用本软件，您可阅读《服务协议》和《隐私政策》了解详细信息。我们会收集一些设备信息用来标识您享有该设备的付费服务权益。如您同意，点击同意后开始授权和接受我们的服务。</string>
-
-    <!--customer auth service dialog-->
-    <string name="auth_service_title">授权申请</string>
-    <string name="auth_service_refuse">取消</string>
-    <string name="auth_service_agree">开始授权</string>
-    <string name="auth_service_content">我们的产品会向您申请以下权限，并告知您申请权限的目的：</string>
-    <string name="auth_service_content_1">1.读取设备权限：获取设备的IMEI，手机型号和系统版本生成设备的唯一标识符来生成一个游客编号，并减少设备的网络请求;</string>
-    <string name="auth_service_content_2">2.存储空间读写权限：应用的所有功能需要读取相册然后生成新的照片保存到存储空间或相册。</string>
-
-    <!--quit dialog-->
-    <string name="quite_title">确定要退出支付吗？</string>
-    <string name="quite_ok">确定</string>
-    <string name="quite_cancel">取消</string>
-
-    <!--pay-->
-    <string name="pay_unit">元</string>
-    <string name="pay_title">订单支付</string>
-    <string name="pay_style_default">支付宝支付</string>
-    <string name="pay_show_name">成功支付金额%s!</string>
-
-    <!--service-->
-    <string name="vip_service_des">VIP专属客服，点击发起会话</string>
-    <string name="visitor_service_des">全部会员可用，三个工作日内审核，审核结果短信通知</string>
-    <string name="common_questions_des">软件使用以及恢复等常见问题(非客服在线时间可以参考)</string>
-    <string name="charge">立即充值</string>
-
-    <!--public resource-->
-    <string name="progress_des">多选恢复和删除，长按查看详情</string>
-    <string name="progress_des_1">正在计算文件的大小…</string>
-    <string name="progress_des_2">多选恢复和删除</string>
-    <string name="progress_status_searching">扫描中...</string>
-
-    <!--accessibility-->
-    <string name="access_description">一键备份</string>
 
     <!--wechat error-->
     <string name="errcode_success">发送成功</string>
@@ -107,50 +42,28 @@
     <string name="questions_title">帮助中心</string>
 
     <!--photo_title-->
-    <string name="title_album">相册</string>
-    <string name="title_fix">照片修复</string>
-    <string name="title_colour">黑白照片上色</string>
-    <string name="title_watermark">去遮挡物</string>
-    <string name="title_definition">清晰度增强</string>
-    <string name="title_resize">图片无损放大</string>
-    <string name="title_contrast">图片对比度增强</string>
-    <string name="title_cartoon">人像动漫化</string>
-    <string name="title_trans_style">人物风格转换</string>
-    <string name="title_defogging">图像去雾</string>
-    <string name="title_stretch_fix">拉伸图像恢复</string>
-    <string name="title_matting">一键抠图</string>
-    <string name="title_crop">图片裁剪</string>
-    <string name="title_crop_">图片裁剪(调整遮挡物的区域)</string>
-    <string name="title_trans_format">格式转换</string>
-    <string name="title_compress">图片压缩</string>
-    <string name="title_format_trans">图片格式转换</string>
-    <string name="title_size_modify">修改尺寸</string>
-    <string name="title_age_trans">人像年龄转换</string>
-    <string name="title_gender_trans">人像性别转换</string>
+    <string name="title_colour_">黑白照片上色</string>
+    <string name="title_colorful_">色彩增强</string>
+    <string name="title_watermark_">去遮挡物</string>
+    <string name="title_definition_">清晰度增强</string>
+    <string name="title_resize_">图片无损放大</string>
+    <string name="title_contrast_">图片对比度增强</string>
+    <string name="title_cartoon_">人像动漫化</string>
+    <string name="title_trans_style_">人物风格转换</string>
+    <string name="title_defogging_">图像去雾</string>
+    <string name="title_stretch_fix_">拉伸图像恢复</string>
+    <string name="title_matting_">一键抠图</string>
+    <string name="title_crop_">图片裁剪</string>
+    <string name="title_trans_format_">格式转换</string>
+    <string name="title_compress_">图片压缩</string>
+    <string name="title_format_trans_">图片格式转换</string>
+    <string name="title_size_modify_">修改尺寸</string>
+    <string name="title_age_trans_">人像年龄转换</string>
+    <string name="title_gender_trans_">人像性别转换</string>
     <string name="title_face_merge">人脸融合</string>
-    <string name="title_morph">人像渐变</string>
+    <string name="title_morph_">人像渐变</string>
 
     <!--photo_desc-->
-    <string name="desc_1">放入一张人脸图片，基于人脸编辑与生成算法，输出一张人脸性别转换的图片。男变女可实现美颜、淡妆、加刘海和长发的效果；女变男可实现加胡须、变短发的效果。</string>
-    <string name="desc_2">五官丢失且面部信息有严重破损折痕的照片不适合智能修复</string>
-    <string name="desc_3">对图片中不需要的物体或者遮挡物进行去除，并使用背景内容进行填充，修复图片缺损内容，提高图片质量</string>
-    <string name="desc_4">图片文件类型支持PNG/JPG/JPEG/BMP格式，图片大小不超过4MB，图片最短边至少10px，最长边最大4000px，长宽比例在4：1以内</string>
-    <string name="desc_5">将图像在长宽方向各放大两倍，保持图像质量无损</string>
-    <string name="desc_6">对压缩后的模糊图像实现智能化降噪，优化图像纹理细节，使画面更加自然清晰</string>
-    <string name="desc_7">运用世界领先的图片生成网络，结合人脸识别，五官分割等技术，为用户量身定制独一无二的二次元动漫形象</string>
-    <string name="desc_8">可将任务头像转化成卡通画，铅笔画，彩色铅笔画，哥特式油画，彩色糖块优化，呐喊油画，奇异油画，薰衣草油画等9种风格</string>
-    <string name="desc_9">对浓雾天气下拍摄的照片进行去雾处理，还原更清晰的图像</string>
-    <string name="desc_10">自动识别过度拉伸的图片，将图片恢复成正常的比例</string>
-    <string name="desc_11">调整过暗或者过量图像的对比度，使图像更加鲜明</string>
-    <string name="desc_12">图片文件类型支持PNG/JPG/JPEG/BMP格式，图片大小不超过3MB，图片长宽乘积不超过2000px*2000px</string>
-    <string name="desc_13">智能识别黑白图像内容并填充色彩，使黑白图像变得鲜活。</string>
-    <string name="desc_14">图片文件类型支持PNG,JPG,JPEG,BMP格式，图片大小不超过3MB，图片最短边至少100px，最长边最大2000px，长宽比例在3：1以内</string>
-    <string name="desc_15">黑白照片</string>
-    <string name="desc_16">图片文件类型支持PNG/JPG/JPEG/BMP格式，图片大小不超过3MB，图片最短边至少50px，最长边最大4096px，长宽比例在3：1以内</string>
-    <string name="desc_17">识别人体的轮廓范围，与背景进行分离，适用于拍照背景替换、照片合成、身体特效等场景。适用范围为照片露脸并且照片人数不超过2人</string>
-    <string name="desc_18">上传一张人脸图片，基于人脸编辑与生成算法，输出一张人脸变老或变年轻的图片，支持实现人脸不同年龄的变化。</string>
-    <string name="desc_19">上传2到5张清晰人脸图片，基于人脸编辑与生成算法，生成一段人像渐变视频，为静态图片增加更多趣味。</string>
-    <string name="desc_20">通过快速精准地定位人脸关键点，将用户上传的照片与特定形象进行面部层面融合，使生成的图片同时具备用户与特定形象的外貌特征.</string>
     <string name="desc_fix">优化图像纹理细节，使画面更加自然清晰</string>
     <string name="desc_colour">智能识别黑白图像内容并填充色彩</string>
     <string name="desc_watermark">去除图片上水印等不需要的遮挡物</string>
@@ -160,51 +73,152 @@
     <string name="desc_defogging">AI智能重建可辨析的图像</string>
     <string name="desc_stretch">AI智能还原过度拉伸的图像</string>
     <string name="desc_matting">人像与背景进行分离</string>
-    <string name="desc_open_camera">拍照</string>
-    <string name="desc_open_album">相册导入</string>
-
-    <!--photo other-->
-    <string name="other_choose_photo">请选择一张图片</string>
-    <string name="other_agree_privacy">请阅读并勾选隐私政策和用户协议</string>
-
-    <!--fix-->
-    <string name="fix_access">处理中...</string>
-    <string name="fix_begin">开始修复</string>
-    <string name="progress_begin">开始处理</string>
-    <string name="fix_save_to_album">图片已保存到相册</string>
-    <string name="fix_tips">图片的大小和网络环境会影响图片的处理速度，请耐心等待。处理成功的图片会保存到相册里，如果相册未找到，请前往文件管理/Pictures目录下查找照片</string>
-    <string name="fix_tips_zip">设置的压缩比例和自定义分辨率可能会影响图片的质量。</string>
-    <string name="fix_tips_format_trans">图片小于5MB</string>
-    <string name="fix_tips_zip_vivo">如果提示成功后，相册未找到，请打开手机的文件管理，照片保存在DCIM文件夹下</string>
-
-    <!--other-->
-    <string name="ok">确定</string>
-    <string name="cancel">取消</string>
 
     <!--zip-->
     <string name="zip_pic_size">图片大小</string>
-    <string name="zip_pic_px">分 辨 率</string>
-    <string name="zip_percent">压缩比例</string>
-
-    <!--enjoy-->
-    <string name="enjoy_six">享受六大特权</string>
-    <string name="enjoy_ten">享受十大特权</string>
-
-    <!--fix tips-->
-    <string name="fix_tips_title">温馨提示</string>
-    <string name="fix_tips_1">付费修图功能上线啦！优质的线上修图服务，价格优惠，等你下单！为了用户能更好的享受图像付费修图功能的服务，请在下单时遵守以下规则：</string>
-    <string name="fix_tips_2">本说明的解释权归照片智能修复软件服务平台所有</string>
-    <string name="fix_tips_3">1.下单前请先与客服进行沟通，双方达成共识后再行下单哦</string>
-    <string name="fix_tips_4">2.不支持非法修图。包括但不限于：修改合同、身份证、健康码、钱包截图、印章等，请大家自觉遵守。非法修图订单在平台内不接受保护,请用户谨慎操作。</string>
-    <string name="fix_tips_5">3.为了确保大家最终能收到满意的图，请在下单前与客服及修图师将自己的需求进行充分说明，文明用语礼貌沟通，以保证良好的沟通环境。</string>
-    <string name="fix_tips_6">4.当订单存在纠纷时，用户可请客服介入，客服有权限查看双方过往聊天记录。</string>
-
-    <string name="your_web_client_id">160523156867-ldpf7s9ievarp1vuv6kvgnps6ijj3o0t.apps.googleusercontent.com</string>
 
     <!--about us-->
-    <string name="about_us_des">PicEasy now!! More than 100,000 people used. Just with one tap, you can easily Enhance,Remove, Retouch, Cutout, Animation, Compression your photos and pictures.There is more than 16+ functions for you to become an editor master without any further complicated skills, and achieve the effects you want. The only thing we want to do is to make it easy to use for every user.</string>
-    <string name="about_us_des_2">If you have any suggestions and feedback on the product, Please contact us</string>
-    <string name="about_us_des_4">Hi there, thank you for choose PicEasy! If you encounter an error or bug, you may email to jxwl2020@gmail.com with the screenshot and your mobile details for us to investigate and advise further.Hope to hear from you soon.</string>
+    <string name="about_us_des">PicEasy，超过10万人使用。只需轻轻一点，你就可以很容易地增强，删除，润色，裁剪，动画，压缩你的照片和图片。超过16+的功能，让您无需进一步复杂的技能就能成为编辑大师，实现您想要的效果。我们唯一想做的就是让每个用户都能轻松使用它。</string>
+    <string name="about_us_des_2">如果你有任何建议，请联系我们</string>
+    <string name="about_us_des_4">嗨, 感谢选择PicEasy!如果您遇到错误或者BUG, 您可以邮件告诉我们，在邮件里附上您的截图或者手机相关数据（jxwl2020@gmail.com）.我们真心邀请您帮助我们改善我们的产品.</string>
     <string name="about_us_des_3">Email： jxwl2020@gmail.com</string>
     <string name="about_us_des_5">PicEasy： Photo Editer &amp; Enhance</string>
+
+    <string name="your_web_client_id">160523156867-ldpf7s9ievarp1vuv6kvgnps6ijj3o0t.apps.googleusercontent.com</string>
+    <string name="pay_style_default">Google Pay</string>
+    <string name="login_failed">登录失败</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_agree_01">我已阅读和同意</string>
+    <string name="login_agree_02">\&#034;用户协议\&#034;</string>
+    <string name="login_agree_03">&amp;</string>
+    <string name="login_agree_04">\&#034;隐私协议\&#034;</string>
+    <string name="title_gender_trans">性别转换</string>
+    <string name="fix_tips">图片的大小和网络会影响图片的速度，请耐心等待，处理成功的图片会保存在相册中。</string>
+    <string name="desc_open_album">相册导入</string>
+    <string name="title_defogging">去雾</string>
+    <string name="title_matting">一键抠图</string>
+    <string name="title_matting_1">一键</string>
+    <string name="title_matting_2">抠图</string>
+    <string name="title_trans_format">格式转换</string>
+    <string name="title_trans_format_1">格式</string>
+    <string name="title_trans_format_2">转换</string>
+    <string name="title_definition">清晰度增强</string>
+    <string name="title_colour">黑白上色</string>
+    <string name="title_resize">无损放大</string>
+    <string name="title_watermark">去除遮挡物</string>
+    <string name="title_stretch_fix">拉伸恢复</string>
+    <string name="title_trans_style">风格转换</string>
+    <string name="title_cartoon">人像卡通化</string>
+    <string name="title_comming_soon">敬请期待</string>
+    <string name="pay_show_name">Successfully received payment data for %s!</string>
+    <string name="agreement_service">用户协议</string>
+    <string name="agreement_privacy">隐私协议</string>
+    <string name="agreement_agree">同意</string>
+    <string name="agreement_disagree">不同意</string>
+    <string name="mine_website">官方网站</string>
+    <string name="mine_help">用户反馈</string>
+    <string name="mine_service">用户协议</string>
+    <string name="mine_privacy">隐私协议</string>
+    <string name="setting_about_us">关于我们</string>
+    <string name="setting_clear_cache">清除缓存</string>
+    <string name="zip_pic_px">分辨率</string>
+    <string name="zip_percent">压缩比例</string>
+    <string name="fix_tips_format_trans">图片不大于5MB</string>
+    <string name="fix_tips_zip_vivo">"使用成功后，您可以在相册里找到图片，或者打开文件管理，在“ALBUM”文件夹下找到它。"</string>
+    <string name="title_compress">图片压缩</string>
+    <string name="title_age_trans">年龄转换</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="title_format_trans">格式转换</string>
+    <string name="progress_begin">开始</string>
+    <string name="other_choose_photo">导入一张图片</string>
+    <string name="fix_access">处理中…</string>
+    <string name="fix_begin">开始</string>
+    <string name="title_album">相册</string>
+    <string name="title_contrast">对比度增强</string>
+    <string name="title_crop">裁剪</string>
+    <string name="fix_save_to_album">保存到相册</string>
+    <string name="feedback_submit">提交</string>
+    <string name="desc_open_camera">拍照</string>
+    <string name="customer_service_agree">同意</string>
+    <string name="other_agree_privacy">请检查 \&#034;隐私政策\&#034; and \&#034;用户协议\&#034;</string>
+    <string name="customer_service_title">隐私政策和用户协议</string>
+    <string name="auth_service_title">权限申请</string>
+    <string name="auth_service_refuse">取消</string>
+    <string name="auth_service_agree">授权</string>
+    <string name="customer_service_agreement">欢迎使用我们的APP</string>
+    <string name="feedback">反馈</string>
+    <string name="quite_title">确定退出吗?</string>
+    <string name="quite_ok">确定</string>
+    <string name="quite_cancel">取消</string>
+    <string name="auth_service_content_1">读取设备信息:获取设备的IMEI、手机型号和系统版本，生成设备的唯一标识符，生成访客号，减少设备的网络请求  </string>
+    <string name="auth_service_content_2">存储空间读写:应用程序的所有功能都需要读取相册，然后生成新的照片保存到存储空间或相册中。</string>
+    <string name="mine_vip">VIP</string>
+    <string name="mine_feedback">意见反馈</string>
+    <string name="auth_service_content">我们将请求以下权限并告知您使用权限的目的：</string>
+    <string name="title_fix">照片修复</string>
+    <string name="title_size_modify">无损放大</string>
+    <string name="desc_1">导入一张照片，基于人脸识别技术，生成一张新的图片</string>
+    <string name="desc_2">失去特征和面部皱纹严重受损的照片不适合智能修复  </string>
+    <string name="desc_3">去除图像中不必要的物体或遮挡，并用背景内容填充，修复缺陷内容，提高图像质量  </string>
+    <string name="desc_4">图像大小不能超过4MB。 图像的最短边长必须至少为10px，最长边长必须不超过4000px，长度和宽度必须小于3:1  </string>
+    <string name="desc_5">将图像在长度和宽度方向上放大两倍，以保持图像质量不变  </string>
+    <string name="desc_6">模糊图像智能降噪，使图像更加自然清晰  </string>
+    <string name="desc_7">为您定制一个独特的动画图像</string>
+    <string name="desc_8">任务头像可以转换成卡通画</string>
+    <string name="desc_9">在雾天拍摄的照片被除雾，以恢复清晰的图像</string>
+    <string name="desc_10">自动识别过度拉伸的图片，并恢复到正常比例</string>
+    <string name="desc_11">调整过暗或过曝光图像的对比度，使其更清晰</string>
+    <string name="desc_12">图片文件类型支持PNG/JPG/JPEG/BMP格式，图片大小不超过3MB，图片长宽产品不超过2000px*2000px</string>
+    <string name="desc_13">智能识别黑白图像内容和彩色填充</string>
+    <string name="desc_14">图片文件类型支持PNG/JPG/JPEG/BMP格式，图片大小不超过3MB，图片最短边至少10px，最长边可达2000px，宽高比在3:1以内</string>
+    <string name="desc_15">黑白照片上色</string>
+    <string name="desc_16">图像大小不能超过4MB。图像的最短边长必须至少为10px，最长边长必须不超过4000px，长度和宽度必须小于3:1</string>
+    <string name="desc_17">确定人体轮廓的范围，并与背景分离，适用于背景置换、照片合成、人体效果等场景。适用范围为公开照片，且照片人数不超过2人</string>
+    <string name="desc_18">上传一张人脸图片，基于人脸编辑和生成算法，输出一张人脸的年龄或年轻的图片，支持实现不同年龄的人脸的变化。</string>
+    <string name="desc_19">上传2 – 5张清晰的人脸图像，基于人脸编辑和生成算法生成人像梯度视频</string>
+    <string name="desc_20">将上传的照片与特定图像进行人脸融合</string>
+    <string name="fix_tips_zip">压缩比和自定义分辨率可能会影响图像的质量</string>
+    <string name="title_morph">人脸渐变</string>
+    <string name="mine_update_to_member">成为会员</string>
+    <string name="mine_dear_member">亲爱的会员</string>
+    <string name="mine_enjoy_more_benefits">享受更多服务</string>
+    <string name="mine_enjoy_times">次可用</string>
+    <string name="mine_buy">购买</string>
+    <string name="login_signin_google">谷歌登录</string>
+    <string name="login_signin_wechat">微信登录</string>
+    <string name="payment_pay">支付</string>
+    <string name="pay_item_title_1">1个月</string>
+    <string name="pay_item_title_2">3个月</string>
+    <string name="pay_item_title_3">1年</string>
+    <string name="pay_item_des_1">3天免费试用</string>
+    <string name="pay_item_des_2">首月$0.99</string>
+    <string name="pay_item_des_3">20%折扣</string>
+    <string name="pay_item_des_4">30%折扣</string>
+    <string name="pay_item_des_5">订阅</string>
+    <string name="pay_item_des_6">随时取消</string>
+    <string name="pay_item_des_7">所有功能可用</string>
+    <string name="style_choose">选择的风格：</string>
+    <string name="style_type_1">铅笔风</string>
+    <string name="style_type_2">彩色铅笔风</string>
+    <string name="style_type_3">彩色糖块油画风</string>
+    <string name="style_type_4">神奈川冲浪里油画风</string>
+    <string name="style_type_5">薰衣草油画风</string>
+    <string name="style_type_6">奇异油画风</string>
+    <string name="style_type_7">呐喊油画风</string>
+    <string name="style_type_8">哥特油画风</string>
+    <string name="style_type_9">卡通画风</string>
+    <string name="style_type_10">原画</string>
+    <string name="image_choose">选择2–5张面部清晰的人脸照片</string>
+    <string name="image_template">模板图</string>
+    <string name="image_face">目标图</string>
+    <string name="image_range_of_age">年龄范围</string>
+    <string name="image_trans_style">风格:</string>
+    <string name="image_male_to_female">男转女</string>
+    <string name="image_female_to_male">女转男</string>
+    <string name="home_popular">热门</string>
+    <string name="home_explore">探索</string>
+    <string name="home_more">更多</string>
+    <string name="pay_item_des_8">自动扣费，随时取消。</string>
+    <string name="pay_item_des_9">订阅条款</string>
 </resources>

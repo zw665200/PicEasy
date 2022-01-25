@@ -1,9 +1,6 @@
 package com.picfix.tools.view.activity
 
-import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.os.*
 import android.view.View
 import android.widget.ImageView
@@ -11,58 +8,61 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.picfix.tools.R
-import com.picfix.tools.config.Constant
+import com.picfix.tools.utils.JLog
 import com.picfix.tools.view.base.BaseFragment
 import com.picfix.tools.view.base.BaseFragmentActivity
-import com.picfix.tools.view.fragment.FFix
+import com.picfix.tools.view.fragment.FHome
 import com.picfix.tools.view.fragment.FTools
 import com.picfix.tools.view.fragment.FMine
 
 class MainActivity : BaseFragmentActivity(), View.OnClickListener {
 
-    companion object {
-        private const val FRAGMENT_HOME = 0
+    private val FRAGMENT_HOME = 0
 
-        private const val DEFAULT_INDEX = FRAGMENT_HOME
+    private val DEFAULT_INDEX = FRAGMENT_HOME
 
-        val BOTTOM_ICON_CHECKED = arrayOf(
-            R.drawable.ic_global_camera_select,
-            R.drawable.ic_global_pic_select,
-            R.drawable.ic_global_mine_select
-        )
+    val BOTTOM_ICON_CHECKED = arrayOf(
+        R.drawable.ic_global_camera_select,
+        R.drawable.ic_global_pic_select,
+        R.drawable.ic_global_mine_select
+    )
 
-        val BOTTOM_ICON_UNCHECKED = arrayOf(
-            R.drawable.ic_global_camera_unselect,
-            R.drawable.ic_global_pic_unselect,
-            R.drawable.ic_global_mine_unselect
-        )
+    val BOTTOM_ICON_UNCHECKED = arrayOf(
+        R.drawable.ic_global_camera_unselect,
+        R.drawable.ic_global_pic_unselect,
+        R.drawable.ic_global_mine_unselect
+    )
 
-        val BOTTOM_TEXT_ARRAY = arrayOf("Home", "Tools", "Me")
+    var BOTTOM_TEXT_ARRAY = arrayOf("Home", "Tools", "Me")
 
-        const val BOTTOM_CHECKED_COLOR: Int = 0xff6BB4FF.toInt()
-        const val BOTTOM_UNCHECKED_COLOR: Int = 0xff212121.toInt()
+    val BOTTOM_CHECKED_COLOR: Int = 0xff6BB4FF.toInt()
+    val BOTTOM_UNCHECKED_COLOR: Int = 0xff212121.toInt()
 
-        val FRAGMENT_CLASS_ARRAY: Array<Class<out BaseFragment>> = arrayOf(
-            FFix::class.java,
-            FTools::class.java,
-            FMine::class.java
-        )
-
-    }
+    val FRAGMENT_CLASS_ARRAY: Array<Class<out BaseFragment>> = arrayOf(
+        FHome::class.java,
+        FTools::class.java,
+        FMine::class.java
+    )
 
     private var mCheckedFragmentID: Int = DEFAULT_INDEX
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.a_home)
+        initData()
         super.onCreate(savedInstanceState)
     }
 
+    private fun initData() {
+        JLog.i("size = ${BOTTOM_TEXT_ARRAY.size}")
+        if (BOTTOM_TEXT_ARRAY.size == 3) {
+            BOTTOM_TEXT_ARRAY[0] = getString(R.string.home)
+            BOTTOM_TEXT_ARRAY[1] = getString(R.string.tools)
+            BOTTOM_TEXT_ARRAY[2] = getString(R.string.me)
+        }
+    }
+
     override fun initView() {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-//            window.statusBarColor = ContextCompat.getColor(this, R.color.color_blue)
-//        }
     }
 
 

@@ -37,15 +37,14 @@ public class BaseUrlInterceptor implements Interceptor {
             //匹配获得新的BaseUrl
             String headerValue = headerValues.get(0);
             HttpUrl newBaseUrl;
+
             if ("v1".equals(headerValue)) {
                 newBaseUrl = HttpUrl.parse(ApiConfig.BASE_URL_1);
-            } else if ("v2".equals(headerValue)) {
-                newBaseUrl = HttpUrl.parse(ApiConfig.BASE_URL_2);
             } else {
-                newBaseUrl = HttpUrl.parse(ApiConfig.BASE_URL_1);
+                newBaseUrl = HttpUrl.parse(ApiConfig.BASE_URL_2);
             }
 
-            if(newBaseUrl==null) return chain.proceed(request);
+            if (newBaseUrl == null) return chain.proceed(request);
 
             //重建新的HttpUrl，修改需要修改的url部分
             HttpUrl newFullUrl = oldHttpUrl
@@ -55,10 +54,12 @@ public class BaseUrlInterceptor implements Interceptor {
                     .port(newBaseUrl.port())//更换端口
                     .removePathSegment(0)//移除第一个参数
                     .build();
-            //重建这个request，通过builder.url(newFullUrl).build()；
+
+            Request newRequest = builder.url(newFullUrl).build();
+
             // 然后返回一个response至此结束修改
             JLog.i("Url", "intercept: " + newFullUrl.toString());
-            return chain.proceed(builder.url(newFullUrl).build());
+            return chain.proceed(newRequest);
         }
         return chain.proceed(request);
     }

@@ -198,7 +198,7 @@ class ImageActivity : BaseActivity() {
                     initRecyclerView()
                 }
                 "face_merge" -> {
-                    reportTitle = getString(R.string.title_face_merge_)
+                    reportTitle = getString(R.string.title_face_merge)
                     text = "Face Fusion"
                     commonLayout.visibility = View.GONE
                     faceMergeLayout.visibility = View.VISIBLE
@@ -218,16 +218,15 @@ class ImageActivity : BaseActivity() {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when (position) {
-                    0 -> type = ""
-                    1 -> type = "pencil"
-                    2 -> type = "color_pencil"
-                    3 -> type = "warm"
-                    4 -> type = "wave"
-                    5 -> type = "lavender"
-                    6 -> type = "mononoke"
-                    7 -> type = "scream"
-                    8 -> type = "gothic"
-                    9 -> type = "cartoon"
+                    0 -> type = "pencil"
+                    1 -> type = "color_pencil"
+                    2 -> type = "warm"
+                    3 -> type = "wave"
+                    4 -> type = "lavender"
+                    5 -> type = "mononoke"
+                    6 -> type = "scream"
+                    7 -> type = "gothic"
+                    8 -> type = "cartoon"
                 }
             }
 
@@ -915,9 +914,11 @@ class ImageActivity : BaseActivity() {
 
         val eventValues = HashMap<String, Any>()
         eventValues[AFInAppEventParameterName.CONTENT] = "page_image_task"
-        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
-        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
-        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
+        if (key == "visit") {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, "page_image_task", eventValues)
+        } else {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, key, eventValues)
+        }
     }
 
 

@@ -95,7 +95,6 @@ class PhotoStretchActivity : BaseActivity() {
 
             pointer.setLayout(dynamicLayout, width / 2)
         }
-
     }
 
     private fun choosePic(index: Int) {
@@ -188,9 +187,11 @@ class PhotoStretchActivity : BaseActivity() {
 
         val eventValues = HashMap<String, Any>()
         eventValues[AFInAppEventParameterName.CONTENT] = "page_stretch_recovery"
-        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
-        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
-        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
+        if (key == "visit") {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, "page_stretch_recovery", eventValues)
+        } else {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, key, eventValues)
+        }
     }
 
 }

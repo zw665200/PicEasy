@@ -9,14 +9,10 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.res.ResourcesCompat
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.appsflyer.AFInAppEventParameterName
-import com.appsflyer.AFInAppEventType
 import com.appsflyer.AppsFlyerLib
-import com.bumptech.glide.Glide
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
 import com.picfix.tools.R
@@ -29,7 +25,7 @@ import com.picfix.tools.utils.AppUtil
 import com.picfix.tools.utils.ToastUtil
 import com.picfix.tools.view.base.BaseActivity
 import kotlinx.android.synthetic.main.item_pic_with_shadow.view.*
-import java.util.HashMap
+import java.util.*
 
 
 class PhotoTransStyleActivity : BaseActivity() {
@@ -78,16 +74,16 @@ class PhotoTransStyleActivity : BaseActivity() {
     @SuppressLint("NotifyDataSetChanged")
     private fun initRecyclerView() {
         picList.clear()
-        picList.add(Resource("1", R.drawable.ic_colour_after_1, "Original Style"))
-        picList.add(Resource("1", R.drawable.iv_trans_qianbi, "Pencil Style"))
-        picList.add(Resource("1", R.drawable.iv_trans_caiseqianbi, "Color Pencil Style "))
-        picList.add(Resource("1", R.drawable.iv_trans_caisetangkuai, "Colorful Candy Style"))
-        picList.add(Resource("1", R.drawable.iv_trans_shenhuchuanchonglang, "Kanagawa Surfing"))
-        picList.add(Resource("1", R.drawable.iv_trans_xunyicao, "Lavender Oil Painting Style"))
-        picList.add(Resource("1", R.drawable.iv_trans_qiyi, "Strange oil painting Style"))
-        picList.add(Resource("1", R.drawable.iv_trans_nahan, "Shouting Oil Painting Style"))
-        picList.add(Resource("1", R.drawable.iv_trans_geteyou, "Gothic Oil Painting Style"))
-        picList.add(Resource("1", R.drawable.iv_trans_katong, "Cartoon Style"))
+        picList.add(Resource("1", R.drawable.ic_colour_after_1, getString(R.string.style_type_10)))
+        picList.add(Resource("1", R.drawable.iv_trans_qianbi, getString(R.string.style_type_1)))
+        picList.add(Resource("1", R.drawable.iv_trans_caiseqianbi, getString(R.string.style_type_2)))
+        picList.add(Resource("1", R.drawable.iv_trans_caisetangkuai, getString(R.string.style_type_3)))
+        picList.add(Resource("1", R.drawable.iv_trans_shenhuchuanchonglang, getString(R.string.style_type_4)))
+        picList.add(Resource("1", R.drawable.iv_trans_xunyicao, getString(R.string.style_type_5)))
+        picList.add(Resource("1", R.drawable.iv_trans_qiyi, getString(R.string.style_type_6)))
+        picList.add(Resource("1", R.drawable.iv_trans_nahan, getString(R.string.style_type_7)))
+        picList.add(Resource("1", R.drawable.iv_trans_geteyou, getString(R.string.style_type_8)))
+        picList.add(Resource("1", R.drawable.iv_trans_katong, getString(R.string.style_type_9)))
 
         val width = AppUtil.getScreenWidth(this)
 
@@ -196,9 +192,11 @@ class PhotoTransStyleActivity : BaseActivity() {
 
         val eventValues = HashMap<String, Any>()
         eventValues[AFInAppEventParameterName.CONTENT] = "page_style_shift"
-        eventValues[AFInAppEventParameterName.CONTENT_ID] = key
-        eventValues[AFInAppEventParameterName.CONTENT_TYPE] = value
-        AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.CONTENT_VIEW, eventValues)
+        if (key == "visit") {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, "page_style_shift", eventValues)
+        } else {
+            AppsFlyerLib.getInstance().logEvent(applicationContext, key, eventValues)
+        }
     }
 
 }

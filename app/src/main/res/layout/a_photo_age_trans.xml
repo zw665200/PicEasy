@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="2dp"
+                    android:layout_width="3dp"
                     android:layout_height="@dimen/dp_250"
                     android:layout_gravity="center"
                     android:background="@color/color_white" />
@@ -202,7 +202,7 @@
             android:layout_height="20dp"
             android:src="@drawable/round_1" />
 
-        <TextView
+        <com.picfix.tools.view.views.JustifyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_10"
@@ -226,7 +226,7 @@
             android:layout_height="20dp"
             android:src="@drawable/round_2" />
 
-        <TextView
+        <com.picfix.tools.view.views.JustifyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_10"

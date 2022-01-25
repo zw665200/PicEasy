@@ -103,7 +103,7 @@
                         android:id="@+id/vip_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Update To Member"
+                        android:text="@string/mine_update_to_member"
                         android:textColor="@color/color_orange_price"
                         android:textSize="@dimen/sp_14" />
 
@@ -112,7 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp_16"
-                        android:text="enjoy more benefits"
+                        android:text="@string/mine_enjoy_more_benefits"
                         android:textColor="@color/color_white"
                         android:textSize="@dimen/sp_12" />
 
@@ -125,9 +125,9 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginEnd="@dimen/sp_16"
                     android:background="@drawable/background_gradient_orange"
-                    android:text="BUY NOW"
+                    android:text="@string/mine_buy"
                     android:textColor="@color/color_orange"
-                    android:textSize="@dimen/dp_12" />
+                    android:textSize="@dimen/sp_12" />
 
             </LinearLayout>
 
@@ -153,7 +153,7 @@
             android:layout_marginEnd="@dimen/sp_16"
             android:layout_marginBottom="@dimen/dp_10"
             android:background="@drawable/shape_corner_white"
-            android:text="Logout"
+            android:text="@string/mine_logout"
             android:textColor="@color/color_red"
             android:textSize="@dimen/sp_13"
             android:visibility="gone" />

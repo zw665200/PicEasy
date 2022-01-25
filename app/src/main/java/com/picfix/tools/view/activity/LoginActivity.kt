@@ -1,5 +1,6 @@
 package com.picfix.tools.view.activity
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
@@ -43,13 +44,15 @@ import com.appsflyer.AppsFlyerLib
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
+import com.tencent.mm.opensdk.modelmsg.SendAuth
 
 
 class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
     private lateinit var back: ImageView
     private lateinit var userAgreement: TextView
     private lateinit var privacyAgreement: TextView
-    private lateinit var login: FrameLayout
+    private lateinit var loginByGoogle: FrameLayout
+    private lateinit var loginByWechat: FrameLayout
     private lateinit var agree: AppCompatCheckBox
     private lateinit var oneTapClient: SignInClient
     private lateinit var signInRequest: BeginSignInRequest
@@ -63,11 +66,13 @@ class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
         back = findViewById(R.id.iv_back)
         userAgreement = findViewById(R.id.user_agreement)
         privacyAgreement = findViewById(R.id.privacy_agreement)
-        login = findViewById(R.id.sign_in_button)
+        loginByGoogle = findViewById(R.id.sign_in_button)
+        loginByWechat = findViewById(R.id.sign_in_wechat)
         agree = findViewById(R.id.agreement_check)
 
         back.setOnClickListener { finish() }
-        login.setOnClickListener { signIn() }
+        loginByGoogle.setOnClickListener { signInByGoogle() }
+        loginByWechat.setOnClickListener { signInByWechat() }
         userAgreement.setOnClickListener { toAgreementPage() }
         privacyAgreement.setOnClickListener { toAgreementPage() }
 
@@ -116,8 +121,33 @@ class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
             .build()
     }
 
+    private fun signInByWechat() {
+        if (agree.isChecked) {
+            if (Constant.OCPC) {
+                requestPhonePermission {
+                    openWechat()
+                }
+            } else {
+                openWechat()
+            }
+        }
+    }
 
-    private fun signIn() {
+    private fun openWechat() {
+        if (AppUtil.checkPackageInfo(this, Constant.WX_PACK_NAME)) {
+            val req = SendAuth.Req()
+            req.scope = "snsapi_userinfo"
+            req.state = "wechat_login"
+            if (Constant.api != null) {
+                Constant.api.sendReq(req)
+            }
+        } else {
+            ToastUtil.showShort(this, "请安装微信")
+        }
+    }
+
+
+    private fun signInByGoogle() {
         if (agree.isChecked) {
             val account = GoogleSignIn.getLastSignedInAccount(this)
             if (account == null) {
@@ -181,7 +211,7 @@ class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
     private fun signOut() {
         googleSignInClient.signOut().addOnCompleteListener {
             JLog.i("logOut success")
-            signIn()
+            signInByGoogle()
         }
     }
 
@@ -245,6 +275,11 @@ class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
     }
 
     private fun getAccessToken(code: String) {
+        if (Constant.QUEST_TOKEN != "") {
+            getUserInfo(code)
+            return
+        }
+
         launch(Dispatchers.IO) {
             TokenLoader.getToken(this@LoginActivity)
                 .compose(ResponseTransformer.handleResult())
@@ -260,7 +295,7 @@ class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
 
     @SuppressLint("CheckResult")
     private fun getUserInfo(code: String) {
-        thread {
+        launch(Dispatchers.IO) {
             UserInfoLoader.getUser(Constant.QUEST_TOKEN, code)
                 .compose(ResponseTransformer.handleResult())
                 .compose(SchedulerProvider.getInstance().applySchedulers())
@@ -285,7 +320,7 @@ class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
                     eventValues[AFInAppEventParameterName.CONTENT] = "Google"
                     AppsFlyerLib.getInstance().logEvent(applicationContext, AFInAppEventType.LOGIN, eventValues)
 
-                    ToastUtil.showShort(this, getString(R.string.login_success))
+                    ToastUtil.showShort(this@LoginActivity, getString(R.string.login_success))
 
                     if (Constant.mHandler != null) {
                         Constant.mHandler.sendEmptyMessage(0x1000)
@@ -302,6 +337,43 @@ class LoginActivity : FragmentActivity(), CoroutineScope by MainScope() {
                     signOut()
                 })
         }
+    }
+
+    private fun requestPhonePermission(method: () -> Unit) {
+
+        val mmkv = MMKV.defaultMMKV()
+        val key = mmkv?.decodeLong("read_phone_permission_deny")
+        if (key != null && key != 0L) {
+            if (System.currentTimeMillis() - key < 3600 * 1000) {
+                ToastUtil.showShort(this, "请打开必要的权限申请保证功能的正常使用")
+                return
+            }
+        }
+
+        LivePermissions(this).request(
+            Manifest.permission.READ_PHONE_STATE
+        ).observe(this, {
+            when (it) {
+                is PermissionResult.Grant -> {
+                    method()
+                    mmkv?.encode("read_phone_permission_deny", 0L)
+                }
+
+                is PermissionResult.Rationale -> {
+                    it.permissions.forEach { s ->
+                        println("Rationale:${s}")//被拒绝的权限
+                        mmkv?.encode("read_phone_permission_deny", System.currentTimeMillis())
+                    }
+                }
+
+                is PermissionResult.Deny -> {
+                    it.permissions.forEach { s ->
+                        println("deny:${s}")//被拒绝的权限
+                        mmkv?.encode("read_phone_permission_deny", System.currentTimeMillis())
+                    }
+                }
+            }
+        })
     }
 
 }

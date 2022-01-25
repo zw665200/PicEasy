@@ -75,7 +75,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choose a style: "
+                android:text="@string/style_choose"
                 android:textColor="@color/color_orange"
                 android:textSize="@dimen/sp_14" />
 
@@ -83,7 +83,7 @@
                 android:id="@+id/style_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Original Style"
+                android:text="@string/style_type_10"
                 android:textColor="@color/color_orange"
                 android:textSize="@dimen/sp_14" />
         </LinearLayout>
@@ -111,7 +111,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/round_1" />
 
-            <TextView
+            <com.picfix.tools.view.views.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_10"
@@ -135,7 +135,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/round_2" />
 
-            <TextView
+            <com.picfix.tools.view.views.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_10"

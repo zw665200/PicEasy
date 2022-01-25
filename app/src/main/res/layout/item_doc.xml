@@ -2,11 +2,11 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_70"
+    android:layout_height="@dimen/dp_60"
     android:layout_marginStart="@dimen/sp_16"
-    android:layout_marginTop="@dimen/dp_16"
+    android:layout_marginTop="@dimen/dp_5"
     android:layout_marginEnd="@dimen/sp_16"
-    android:layout_marginBottom="@dimen/dp_8"
+    android:layout_marginBottom="@dimen/dp_5"
     android:background="@drawable/shape_corner_white"
     android:orientation="vertical"
     app:cardCornerRadius="@dimen/dp_15">
@@ -30,36 +30,48 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Timer"
             android:textColor="@color/color_content"
-            android:textSize="@dimen/sp_19"
+            android:textSize="@dimen/sp_16"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/des"
+            android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/dp_5"
-            android:ellipsize="middle"
-            android:gravity="center"
-            android:singleLine="true"
-            android:text="use 10 times"
             android:textColor="@color/color_content"
             android:textSize="@dimen/sp_12" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/price"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|center_vertical"
-        android:layout_marginEnd="@dimen/sp_16"
-        android:text="3.99USD"
-        android:textColor="@color/color_content"
-        android:textSize="@dimen/sp_21"
-        android:textStyle="bold" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/sp_16"
+            android:gravity="end"
+            android:textColor="@color/color_content"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/per"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/sp_16"
+            android:textColor="@color/color_dark_grey"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

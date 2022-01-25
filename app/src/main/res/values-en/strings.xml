@@ -1,5 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name">PicEasy</string>
+    <string name="home">Home</string>
+    <string name="tools">Tools</string>
+    <string name="me">Me</string>
     <string name="your_web_client_id">160523156867-ldpf7s9ievarp1vuv6kvgnps6ijj3o0t.apps.googleusercontent.com</string>
     <string name="pay_style_default">Google Pay</string>
     <string name="login_failed">login failed</string>
@@ -13,14 +16,19 @@
     <string name="desc_open_album">import from Album</string>
     <string name="title_defogging">Defogging</string>
     <string name="title_matting">One-Click Cutout</string>
+    <string name="title_matting_1">One-Click</string>
+    <string name="title_matting_2">Cutout</string>
     <string name="title_trans_format">Format Conversion</string>
     <string name="title_definition">Sharpness Enhancement</string>
-    <string name="title_colour">Colorized</string>
+    <string name="title_colour">Colorize</string>
     <string name="title_resize">Nondestructive Amoplification</string>
+    <string name="title_trans_format_1">Format</string>
+    <string name="title_trans_format_2">Conversion</string>
     <string name="title_watermark">Remove Obstructions</string>
     <string name="title_stretch_fix">Stretch Recovery</string>
     <string name="title_trans_style">Style Shift</string>
     <string name="title_cartoon">Cartoon Selfie</string>
+    <string name="title_comming_soon">Comming Soon</string>
     <string name="pay_show_name">Successfully received payment data for %s!</string>
     <string name="agreement_service">Terms Of User</string>
     <string name="agreement_privacy">Privacy Policy</string>
@@ -44,10 +52,10 @@
     <string name="title_format_trans">Format Conversion</string>
     <string name="progress_begin">START</string>
     <string name="other_choose_photo">import a picture</string>
-    <string name="fix_access">Processing...</string>
+    <string name="fix_access">Processing…</string>
     <string name="fix_begin">START</string>
     <string name="title_album">Album</string>
-    <string name="title_contrast">Contrast Enhancement</string>
+    <string name="title_contrast">Constrast Enhancement</string>
     <string name="title_crop">Crop</string>
     <string name="fix_save_to_album">Saved in album</string>
     <string name="feedback_submit">Submit</string>
@@ -92,5 +100,65 @@
     <string name="desc_20">Facial-level fusion of uploaded photos and specific images</string>
     <string name="fix_tips_zip">Compression ratio and custom resolution may affect the quality of the image</string>
     <string name="title_morph">Portrait Gradient</string>
+    <!-- home -->
+    <string name="home_title_01">AI Enhance Photo</string>
+    <string name="home_title_02">Photo Retouch</string>
+    <string name="home_content_01">Restore high-definition pictures</string>
+    <string name="home_content_02">Remove obstructions</string>
 
+    <!--Splash-->
+    <string name="splash_title">Best Photo Editer &amp; Enhance</string>
+
+    <!--mine-->
+    <string name="mine_setting">其它服务</string>
+    <string name="mine_login">LOGIN</string>
+    <string name="mine_login_before_des">Guest</string>
+    <string name="mine_logout">Logout</string>
+    <string name="mine_update_to_member">Update to Member</string>
+    <string name="mine_dear_member">Dear Member</string>
+    <string name="mine_enjoy_more_benefits">enjoy more benifits</string>
+    <string name="mine_buy">BUY NOW</string>
+
+    <string name="about_us_des">PicEasy now!! More than 100,000 people used. Just with one tap, you can easily Enhance,Remove, Retouch, Cutout, Animation, Compression your photos and pictures.There is more than 16+ functions for you to become an editor master without any further complicated skills, and achieve the effects you want. The only thing we want to do is to make it easy to use for every user.</string>
+    <string name="about_us_des_2">If you have any suggestions and feedback on the product, Please contact us</string>
+    <string name="about_us_des_4">Hi there, thank you for choose PicEasy! If you encounter an error or bug, you may email to jxwl2020@gmail.com with the screenshot and your mobile details for us to investigate and advise further.Hope to hear from you soon.</string>
+    <string name="about_us_des_3">Email： jxwl2020@gmail.com</string>
+    <string name="about_us_des_5">PicEasy： Photo Editer &amp; Enhance</string>
+    <string name="login_signin_google">Sign In Google</string>
+    <string name="login_signin_wechat">Sign In Wechat</string>
+    <string name="payment_pay">BUY NOW</string>
+    <string name="mine_enjoy_times">times avaliable</string>
+    <string name="pay_item_title_1">1 month</string>
+    <string name="pay_item_title_2">3 months</string>
+    <string name="pay_item_title_3">1 year</string>
+    <string name="pay_item_des_1">3 days free trial</string>
+    <string name="pay_item_des_2">$0.99 first month</string>
+    <string name="pay_item_des_5">Subscription</string>
+    <string name="pay_item_des_6">Cancel anytime</string>
+    <string name="pay_item_des_7">All functions available</string>
+    <string name="style_choose">Choose a style: </string>
+    <string name="style_type_1">Pencil Style</string>
+    <string name="style_type_2">Color Pencil Style</string>
+    <string name="style_type_3">Colorful Candy Style</string>
+    <string name="style_type_4">Kanagawa Surfing</string>
+    <string name="style_type_5">Lavender Oil Painting Style</string>
+    <string name="style_type_6">Strange oil painting Style</string>
+    <string name="style_type_7">Shouting Oil Painting Style</string>
+    <string name="style_type_8">Gothic Oil Painting Style</string>
+    <string name="style_type_9">Cartoon Style</string>
+    <string name="style_type_10">Original</string>
+    <string name="image_choose">choose 2 to 5 clear face pictures</string>
+    <string name="image_template">template</string>
+    <string name="image_face">target</string>
+    <string name="image_range_of_age">range of age:</string>
+    <string name="image_trans_style">style: </string>
+    <string name="image_male_to_female">male to female</string>
+    <string name="image_female_to_male">female to male</string>
+    <string name="home_popular">Popular</string>
+    <string name="home_explore">Explore</string>
+    <string name="home_more">more</string>
+    <string name="pay_item_des_3">20% Off</string>
+    <string name="pay_item_des_4">30% Off</string>
+    <string name="pay_item_des_8">auto-renewal cancel anytime.</string>
+    <string name="pay_item_des_9">Terms and conditions</string>
 </resources>

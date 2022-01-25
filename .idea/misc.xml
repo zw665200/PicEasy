@@ -107,19 +107,25 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/background_gradient_white.xml" value="0.5429009193054137" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/seekbar_bg.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/seekbar_thumb.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_corner_black.xml" value="0.575" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_corner_blue.xml" value="0.5429009193054137" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_corner_green.xml" value="0.575" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_corner_grey.xml" value="0.5429009193054137" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_corner_red.xml" value="0.5661538461538461" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_corner_white.xml" value="0.5429009193054137" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_corner_yellow.xml" value="0.5429009193054137" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_left_corner_blue.xml" value="0.5429009193054137" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_left_corner_white.xml" value="0.5429009193054137" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_rectangle_blue.xml" value="0.575" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_rectangle_orange.xml" value="0.5429009193054137" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_rectangle_red.xml" value="0.5429009193054137" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_rectangle_white.xml" value="0.575" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_rectangle_yellow.xml" value="0.575" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_right_corner_blue.xml" value="0.5429009193054137" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_right_corner_white.xml" value="0.5429009193054137" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_top_corner_light_blue.xml" value="0.5429009193054137" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_top_corner_light_white.xml" value="0.5429009193054137" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/drawable/shape_top_corner_light_white_home.xml" value="0.575" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_about_us.xml" value="0.5" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_agreement.xml" value="0.5" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_bill_pay.xml" value="0.5333333333333333" />
@@ -128,29 +134,34 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_feedback.xml" value="0.2859375" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_fix_pay.xml" value="0.5" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_hand_fix_pay.xml" value="0.2859375" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_home.xml" value="0.5588541666666667" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_image.xml" value="0.5" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_login.xml" value="0.33" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_login.xml" value="0.5" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_mine.xml" value="0.5" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_pay_success.xml" value="0.325" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_age_trans.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_cartoon.xml" value="0.5" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_colour.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_contrast.xml" value="0.5333333333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_crop.xml" value="0.5588541666666667" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_definition.xml" value="0.5" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_defogging.xml" value="0.26608695652173914" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_face_merge.xml" value="0.67" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_face_merge.xml" value="0.33" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_format_trans.xml" value="0.33" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_gender_trans.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_matting.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_morph.xml" value="0.5" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_remove_watermark.xml" value="0.5333333333333333" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_resize.xml" value="0.5333333333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_resize.xml" value="0.67" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_stretch.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_trans_style.xml" value="0.5" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_zip.xml" value="0.5" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_question.xml" value="0.4640625" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_recovery_pay.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_tutorial.xml" value="0.3723958333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/activity_base.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/activity_splash.xml" value="0.5333333333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/d_fix_tips.xml" value="0.5588541666666667" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/d_not_find_file.xml" value="0.3723958333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/d_pay.xml" value="0.3723958333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/d_pay_success.xml" value="0.5333333333333333" />
@@ -158,17 +169,20 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/d_quit.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/d_save_image.xml" value="0.3723958333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/d_service_auth.xml" value="0.5333333333333333" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/f_fix.xml" value="0.5" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/f_fix.xml" value="0.33" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/f_home.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/f_tools.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_banner.xml" value="0.5333333333333333" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_doc.xml" value="0.5" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_doc.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_doc_1.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_function.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_other.xml" value="0.5333333333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_pic_with_shadow.xml" value="0.5333333333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_recommend.xml" value="0.325" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/item_video.xml" value="0.325" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/layout_progressbar.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/layout_second_bottom.xml" value="0.5588541666666667" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/PicEasy/app/src/main/res/layout/pop_terms.xml" value="0.33" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/PicEasy/app/src/main/res/layout/a_photo_resize.xml" value="0.5604166666666667" />
       </map>
     </option>

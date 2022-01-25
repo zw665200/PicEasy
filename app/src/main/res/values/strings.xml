@@ -1,53 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
     <string name="app_name">PicEasy</string>
-    <string name="tools">More Tools</string>
-
-    <!-- home -->
-    <string name="home_title_01">AI Enhance Photo</string>
-    <string name="home_title_02">Photo Retouch</string>
-    <string name="home_content_01">Restore high-definition pictures</string>
-    <string name="home_content_02">Remove obstructions</string>
-
-    <!--Splash-->
-    <string name="splash_title">Best Photo Editer &amp; Enhance</string>
-
-    <!--mine-->
-    <string name="mine_setting">其它服务</string>
-    <string name="mine_login">LOGIN</string>
-    <string name="mine_login_before_des">Guest</string>
-    <string name="mine_logout">Logout</string>
+    <string name="home">Home</string>
+    <string name="tools">Tools</string>
+    <string name="me">Me</string>
 
     <!--setting-->
     <string name="setting_about_us_des">关于我们，了解更多</string>
     <string name="setting_account_delete">账号注销</string>
     <string name="setting_clear_cache_des">账号永久注销</string>
 
-    <string name="feedback_hint">请您输入您需要反馈的内容，如产品性能问题，请详细描述无法恢复的内容及有效的投诉理由，我们将会以您提交的内容描述进行审核。</string>
-    <string name="feedback_pay_account">请输入您用于支付的支付宝账号</string>
-    <string name="feedback_contact">请输入您的手机号(11位有效手机号)</string>
-    <string name="feedback_img_content">上传图片（不超过3张 ,每张不大于1MB）</string>
-
     <!--customer service dialog-->
     <string name="customer_service_refuse">暂不使用</string>
-
-    <!--pay-->
-    <string name="pay_unit">元</string>
-    <string name="pay_title">订单支付</string>
-
-    <!--service-->
-    <string name="vip_service_des">VIP专属客服，点击发起会话</string>
-    <string name="visitor_service_des">全部会员可用，三个工作日内审核，审核结果短信通知</string>
-    <string name="common_questions_des">软件使用以及恢复等常见问题(非客服在线时间可以参考)</string>
-    <string name="charge">立即充值</string>
-
-    <!--public resource-->
-    <string name="progress_des">多选恢复和删除，长按查看详情</string>
-    <string name="progress_des_1">正在计算文件的大小…</string>
-    <string name="progress_des_2">多选恢复和删除</string>
-    <string name="progress_status_searching">扫描中...</string>
-
-    <!--accessibility-->
-    <string name="access_description">一键备份</string>
 
     <!--wechat error-->
     <string name="errcode_success">发送成功</string>
@@ -82,7 +46,6 @@
     <string name="title_size_modify_">修改尺寸</string>
     <string name="title_age_trans_">人像年龄转换</string>
     <string name="title_gender_trans_">人像性别转换</string>
-    <string name="title_face_merge_">人脸融合</string>
     <string name="title_morph_">人像渐变</string>
 
     <!--photo_desc-->
@@ -99,26 +62,6 @@
     <!--zip-->
     <string name="zip_pic_size">图片大小</string>
 
-    <!--enjoy-->
-    <string name="enjoy_six">享受六大特权</string>
-    <string name="enjoy_ten">享受十大特权</string>
-
-    <!--fix tips-->
-    <string name="fix_tips_title">温馨提示</string>
-    <string name="fix_tips_1">付费修图功能上线啦！优质的线上修图服务，价格优惠，等你下单！为了用户能更好的享受图像付费修图功能的服务，请在下单时遵守以下规则：</string>
-    <string name="fix_tips_2">本说明的解释权归照片智能修复软件服务平台所有</string>
-    <string name="fix_tips_3">1.下单前请先与客服进行沟通，双方达成共识后再行下单哦</string>
-    <string name="fix_tips_4">2.不支持非法修图。包括但不限于：修改合同、身份证、健康码、钱包截图、印章等，请大家自觉遵守。非法修图订单在平台内不接受保护,请用户谨慎操作。</string>
-    <string name="fix_tips_5">3.为了确保大家最终能收到满意的图，请在下单前与客服及修图师将自己的需求进行充分说明，文明用语礼貌沟通，以保证良好的沟通环境。</string>
-    <string name="fix_tips_6">4.当订单存在纠纷时，用户可请客服介入，客服有权限查看双方过往聊天记录。</string>
-
-    <!--about us-->
-    <string name="about_us_des">PicEasy now!! More than 100,000 people used. Just with one tap, you can easily Enhance,Remove, Retouch, Cutout, Animation, Compression your photos and pictures.There is more than 16+ functions for you to become an editor master without any further complicated skills, and achieve the effects you want. The only thing we want to do is to make it easy to use for every user.</string>
-    <string name="about_us_des_2">If you have any suggestions and feedback on the product, Please contact us</string>
-    <string name="about_us_des_4">Hi there, thank you for choose PicEasy! If you encounter an error or bug, you may email to jxwl2020@gmail.com with the screenshot and your mobile details for us to investigate and advise further.Hope to hear from you soon.</string>
-    <string name="about_us_des_3">Email： jxwl2020@gmail.com</string>
-    <string name="about_us_des_5">PicEasy： Photo Editer &amp; Enhance</string>
-
     <string name="your_web_client_id">160523156867-ldpf7s9ievarp1vuv6kvgnps6ijj3o0t.apps.googleusercontent.com</string>
     <string name="pay_style_default">Google Pay</string>
     <string name="login_failed">login failed</string>
@@ -132,14 +75,19 @@
     <string name="desc_open_album">import from Album</string>
     <string name="title_defogging">Defogging</string>
     <string name="title_matting">One-Click Cutout</string>
+    <string name="title_matting_1">One-Click</string>
+    <string name="title_matting_2">Cutout</string>
     <string name="title_trans_format">Format Conversion</string>
     <string name="title_definition">Sharpness Enhancement</string>
-    <string name="title_colour">Colorized</string>
+    <string name="title_colour">Colorize</string>
     <string name="title_resize">Nondestructive Amoplification</string>
+    <string name="title_trans_format_1">Format</string>
+    <string name="title_trans_format_2">Conversion</string>
     <string name="title_watermark">Remove Obstructions</string>
     <string name="title_stretch_fix">Stretch Recovery</string>
     <string name="title_trans_style">Style Shift</string>
     <string name="title_cartoon">Cartoon Selfie</string>
+    <string name="title_comming_soon">Comming Soon</string>
     <string name="pay_show_name">Successfully received payment data for %s!</string>
     <string name="agreement_service">Terms Of User</string>
     <string name="agreement_privacy">Privacy Policy</string>
@@ -163,10 +111,10 @@
     <string name="title_format_trans">Format Conversion</string>
     <string name="progress_begin">START</string>
     <string name="other_choose_photo">import a picture</string>
-    <string name="fix_access">Processing...</string>
+    <string name="fix_access">Processing…</string>
     <string name="fix_begin">START</string>
     <string name="title_album">Album</string>
-    <string name="title_contrast">Contrast Enhancement</string>
+    <string name="title_contrast">Constrast Enhancement</string>
     <string name="title_crop">Crop</string>
     <string name="fix_save_to_album">Saved in album</string>
     <string name="feedback_submit">Submit</string>
@@ -211,4 +159,67 @@
     <string name="desc_20">Facial-level fusion of uploaded photos and specific images</string>
     <string name="fix_tips_zip">Compression ratio and custom resolution may affect the quality of the image</string>
     <string name="title_morph">Portrait Gradient</string>
+    <!-- home -->
+    <string name="home_title_01">AI Enhance Photo</string>
+    <string name="home_title_02">Photo Retouch</string>
+    <string name="home_content_01">Restore high-definition pictures</string>
+    <string name="home_content_02">Remove obstructions</string>
+
+    <!--Splash-->
+    <string name="splash_title">Best Photo Editer &amp; Enhance</string>
+
+    <!--mine-->
+    <string name="mine_setting">其它服务</string>
+    <string name="mine_login">LOGIN</string>
+    <string name="mine_login_before_des">Guest</string>
+    <string name="mine_logout">Logout</string>
+    <string name="mine_update_to_member">Update to Member</string>
+    <string name="mine_dear_member">Dear Member</string>
+    <string name="mine_enjoy_more_benefits">enjoy more benifits</string>
+    <string name="mine_buy">BUY NOW</string>
+
+    <string name="about_us_des">PicEasy now!! More than 100,000 people used. Just with one tap, you can easily Enhance,Remove, Retouch, Cutout, Animation, Compression your photos and pictures.There is more than 16+ functions for you to become an editor master without any further complicated skills, and achieve the effects you want. The only thing we want to do is to make it easy to use for every user.</string>
+    <string name="about_us_des_2">If you have any suggestions and feedback on the product, Please contact us</string>
+    <string name="about_us_des_4">Hi there, thank you for choose PicEasy! If you encounter an error or bug, you may email to jxwl2020@gmail.com with the screenshot and your mobile details for us to investigate and advise further.Hope to hear from you soon.</string>
+    <string name="about_us_des_3">Email： jxwl2020@gmail.com</string>
+    <string name="about_us_des_5">PicEasy： Photo Editer &amp; Enhance</string>
+    <string name="login_signin_google">Sign In Google</string>
+    <string name="login_signin_wechat">Sign In Wechat</string>
+    <string name="payment_pay">BUY NOW</string>
+    <string name="mine_enjoy_times">times avaliable</string>
+    <string name="pay_item_title_1">1 month</string>
+    <string name="pay_item_title_2">3 months</string>
+    <string name="pay_item_title_3">1 year</string>
+    <string name="pay_item_des_1">3 days free trial</string>
+    <string name="pay_item_des_2">$0.99 first month</string>
+    <string name="pay_item_des_5">Subscription</string>
+    <string name="pay_item_des_6">Cancel anytime</string>
+    <string name="pay_item_des_7">All functions available</string>
+    <string name="style_choose">Choose a style: </string>
+    <string name="style_type_1">Pencil Style</string>
+    <string name="style_type_2">Color Pencil Style</string>
+    <string name="style_type_3">Colorful Candy Style</string>
+    <string name="style_type_4">Kanagawa Surfing</string>
+    <string name="style_type_5">Lavender Oil Painting Style</string>
+    <string name="style_type_6">Strange oil painting Style</string>
+    <string name="style_type_7">Shouting Oil Painting Style</string>
+    <string name="style_type_8">Gothic Oil Painting Style</string>
+    <string name="style_type_9">Cartoon Style</string>
+    <string name="style_type_10">Original</string>
+    <string name="image_choose">choose 2 to 5 clear face pictures</string>
+    <string name="image_template">template</string>
+    <string name="image_face">target</string>
+    <string name="image_range_of_age">range of age:</string>
+    <string name="image_trans_style">style: </string>
+    <string name="image_male_to_female">male to female</string>
+    <string name="image_female_to_male">female to male</string>
+    <string name="home_popular">Popular</string>
+    <string name="home_explore">Explore</string>
+    <string name="home_more">more</string>
+    <string name="pay_item_des_3">20% Off</string>
+    <string name="pay_item_des_4">30% Off</string>
+    <string name="pay_item_des_8">auto-renewal cancel anytime.</string>
+    <string name="pay_item_des_9">Terms and conditions</string>
+    <string name="terms_agreement">Terms of Service - Privacy Policy</string>
+    <string name="terms_content">Payment will be charged to your Google account upon confirmation of subscription.Your subscription automatically renews unless you cancel the subscription 24-hours before the end of the current period.Your account will be charged for renewal at the price listed within 24-hours prior to the end of the current period. Subscriptions can be managed and auto-renewal may be turned off via GooglePlay Stores>My account>Payments &amp; subscriptions>Subscriptions. You can cancel the subscription at any time and the cancellation will be effective since next subscription period and no refund for the current billing cycle. </string>
 </resources>

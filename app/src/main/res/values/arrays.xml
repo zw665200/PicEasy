@@ -83,7 +83,6 @@
     </string-array>
 
     <string-array name="trans_style">
-        <item>Original style</item>
         <item>Pencil style</item>
         <item>Color pencil Style</item>
         <item>Colorful candy style </item>
@@ -94,5 +93,10 @@
         <item>Gothic Oil Painting Style</item>
         <item>Cartoon Style</item>
     </string-array>
+
+    <array name="sizes">
+        <item>12sp</item>
+        <item>16sp</item>
+    </array>
 
 </resources>

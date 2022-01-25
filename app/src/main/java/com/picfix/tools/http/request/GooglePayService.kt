@@ -10,7 +10,8 @@ import retrofit2.http.POST
 
 interface GooglePayService {
 
-    @POST("notify/googlePayBack")
+    //    @POST("notify/googlePayBack")
+    @POST("googleSub")
     @FormUrlEncoded
     fun orderValidate(
         @Field("clientToken") token: String,

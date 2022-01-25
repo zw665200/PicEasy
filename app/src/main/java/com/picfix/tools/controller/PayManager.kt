@@ -224,35 +224,19 @@ class PayManager private constructor() : CoroutineScope by MainScope() {
         )
     }
 
-    fun doGoogleFastPay(activity: Activity, productId: String, callback: PayCallback) {
+    /**
+     * Google Pay
+     * @param productId productId of Google Play
+     */
+    fun doGoogleFastPay(activity: Activity, productId: String, productType: String, callback: PayCallback) {
         val listener = PurchasesUpdatedListener { billingResult, purchases ->
             when (billingResult.responseCode) {
                 BillingClient.BillingResponseCode.OK -> {
                     JLog.i("pay success")
                     if (purchases != null) {
                         for (purchase in purchases) {
-
-                            //consume purchase
-                            val consumeParams =
-                                ConsumeParams.newBuilder()
-                                    .setPurchaseToken(purchase.purchaseToken)
-                                    .build()
-
-                            billingClient.consumeAsync(
-                                consumeParams
-                            ) { BillingResult, _ ->
-                                when (BillingResult.responseCode) {
-                                    BillingClient.BillingResponseCode.OK -> {
-                                        val packName = purchase.packageName
-                                        val purchaseToken = purchase.purchaseToken
-
-                                        JLog.i("packName = $packName")
-                                        JLog.i("purchaseToken = $purchaseToken")
-
-                                        googlePayOrderValidate(packName, productId, purchaseToken, callback)
-                                    }
-                                }
-                            }
+                            val packName = purchase.packageName
+                            googlePayOrderValidate(packName, productId, productType, purchase, callback)
                         }
                     }
                 }
@@ -289,7 +273,7 @@ class PayManager private constructor() : CoroutineScope by MainScope() {
                     skuList.add(productId)
 
                     val params = SkuDetailsParams.newBuilder()
-                    params.setSkusList(skuList).setType(BillingClient.SkuType.INAPP)
+                    params.setSkusList(skuList).setType(BillingClient.SkuType.SUBS)
 
                     // leverage querySkuDetails Kotlin extension function
                     billingClient.querySkuDetailsAsync(
@@ -323,6 +307,78 @@ class PayManager private constructor() : CoroutineScope by MainScope() {
                 }
             }
         })
+    }
+
+    /**
+     * Order validate of Google Pay
+     */
+    @SuppressLint("CheckResult")
+    private fun googlePayOrderValidate(packName: String, productId: String, productType: String, purchase: Purchase, callback: PayCallback) {
+        thread {
+            GooglePayLoader.googlePayValidate(packName, productId, purchase.purchaseToken)
+                .compose(ResponseTransformer.handleResult())
+                .compose(SchedulerProvider.getInstance().applySchedulers())
+                .subscribe({
+                    if (it.paied) {
+                        callback.success()
+                        if (productType == "consume") {
+                            consumePurchase(purchase, productId, callback)
+                        } else {
+                            acknowledgePurchase(purchase, productId, callback)
+                        }
+                    } else {
+                        callback.failed("valitedate fail")
+                    }
+                }, {
+                    callback.failed("serve error")
+                })
+        }
+    }
+
+    private fun consumePurchase(purchase: Purchase, productId: String, callback: PayCallback) {
+        //consume purchase
+        val consumeParams =
+            ConsumeParams.newBuilder()
+                .setPurchaseToken(purchase.purchaseToken)
+                .build()
+
+        billingClient.consumeAsync(
+            consumeParams
+        ) { BillingResult, _ ->
+            when (BillingResult.responseCode) {
+                BillingClient.BillingResponseCode.OK -> {
+                    val packName = purchase.packageName
+                    val purchaseToken = purchase.purchaseToken
+
+                    JLog.i("packName = $packName")
+                    JLog.i("purchaseToken = $purchaseToken")
+                    JLog.i("cosume success")
+
+                }
+            }
+        }
+    }
+
+
+    private fun acknowledgePurchase(purchase: Purchase, productId: String, callback: PayCallback) {
+        //subscription purchase
+        if (!purchase.isAcknowledged) {
+            val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+                .setPurchaseToken(purchase.purchaseToken)
+            billingClient.acknowledgePurchase(
+                acknowledgePurchaseParams.build()
+            ) {
+                when (it.responseCode) {
+                    BillingClient.BillingResponseCode.OK -> {
+                        val packName = purchase.packageName
+                        val purchaseToken = purchase.purchaseToken
+                        JLog.i("packName = $packName")
+                        JLog.i("purchaseToken = $purchaseToken")
+                        JLog.i("acknowledge success")
+                    }
+                }
+            }
+        }
     }
 
 
@@ -397,22 +453,5 @@ class PayManager private constructor() : CoroutineScope by MainScope() {
         return garmentList.getJSONObject(randomIndex)
     }
 
-    /**
-     * 支付宝支付
-     */
-    @SuppressLint("CheckResult")
-    fun googlePayOrderValidate(packName: String, productId: String, purchaseToken: String, callback: PayCallback) {
-        thread {
-            GooglePayLoader.googlePayValidate(packName, productId, purchaseToken)
-                .compose(ResponseTransformer.handleResult())
-                .compose(SchedulerProvider.getInstance().applySchedulers())
-                .subscribe({
-                    if (it.paied) {
-                        callback.success()
-                    }
-                }, {
-                })
-        }
-    }
 
 }

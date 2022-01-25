@@ -10,6 +10,7 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import com.picfix.tools.R
 import com.picfix.tools.bean.FileBean
+import com.picfix.tools.bean.FileWithType
 import com.picfix.tools.callback.DialogCallback
 import com.picfix.tools.utils.AppUtil
 
