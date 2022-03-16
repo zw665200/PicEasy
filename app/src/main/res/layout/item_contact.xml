@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
 
-        <com.picfix.tools.view.views.CircleImageView
+        <com.piceasy.tools.view.views.CircleImageView
             android:id="@+id/user_icon"
             android:layout_width="@dimen/dp_45"
             android:layout_height="@dimen/dp_45"

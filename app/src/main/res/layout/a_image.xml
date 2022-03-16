@@ -57,7 +57,7 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop" />
 
-            <com.picfix.tools.view.views.CropCanvas
+            <com.piceasy.tools.view.views.CropCanvas
                 android:id="@+id/image_edit_area_select"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

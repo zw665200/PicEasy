@@ -41,7 +41,7 @@
             android:textColor="@android:color/white"
             android:textSize="@dimen/sp_14" />
 
-        <com.picfix.tools.view.views.CircleImageView
+        <com.piceasy.tools.view.views.CircleImageView
             android:id="@+id/icon_right"
             android:layout_width="@dimen/dp_40"
             android:layout_height="@dimen/dp_40"

@@ -187,6 +187,7 @@
     <string name="login_signin_wechat">Sign In Wechat</string>
     <string name="payment_pay">BUY NOW</string>
     <string name="mine_enjoy_times">times avaliable</string>
+    <string name="mine_unlimited_times">unlimited times</string>
     <string name="pay_item_title_1">1 month</string>
     <string name="pay_item_title_2">3 months</string>
     <string name="pay_item_title_3">1 year</string>
@@ -218,8 +219,19 @@
     <string name="home_more">more</string>
     <string name="pay_item_des_3">20% Off</string>
     <string name="pay_item_des_4">30% Off</string>
+    <string name="pay_item_des_10">$3.19/Month</string>
+    <string name="pay_item_des_11">$2.79/Month</string>
     <string name="pay_item_des_8">auto-renewal cancel anytime.</string>
     <string name="pay_item_des_9">Terms and conditions</string>
     <string name="terms_agreement">Terms of Service - Privacy Policy</string>
     <string name="terms_content">Payment will be charged to your Google account upon confirmation of subscription.Your subscription automatically renews unless you cancel the subscription 24-hours before the end of the current period.Your account will be charged for renewal at the price listed within 24-hours prior to the end of the current period. Subscriptions can be managed and auto-renewal may be turned off via GooglePlay Stores>My account>Payments &amp; subscriptions>Subscriptions. You can cancel the subscription at any time and the cancellation will be effective since next subscription period and no refund for the current billing cycle. </string>
+    <string name="pay_success">pay success</string>
+    <string name="saved_path">Saved path: </string>
+    <string name="before">before</string>
+    <string name="now">now</string>
+    <string name="import_pic">IMPORT PICTURE</string>
+    <string name="exceed_3">do not exceed 3MB</string>
+    <string name="exceed_4">do not exceed 4MB</string>
+    <string name="exceed_5">do not exceed 5MB</string>
+    <string name="exceed_6">do not exceed 6MB</string>
 </resources>

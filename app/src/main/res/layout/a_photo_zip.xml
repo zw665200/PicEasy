@@ -66,7 +66,7 @@
                 android:layout_gravity="center"
                 android:drawableTop="@drawable/iv_picture_crop_tag_img"
                 android:drawablePadding="@dimen/dp_5"
-                android:text="IMPORT PICTURE"
+                android:text="@string/import_pic"
                 android:textColor="@color/color_dark_blue" />
 
         </androidx.cardview.widget.CardView>
@@ -195,7 +195,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/round_1" />
 
-            <com.picfix.tools.view.views.JustifyTextView
+            <com.piceasy.tools.view.views.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -220,7 +220,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/round_2" />
 
-            <com.picfix.tools.view.views.JustifyTextView
+            <com.piceasy.tools.view.views.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_10"

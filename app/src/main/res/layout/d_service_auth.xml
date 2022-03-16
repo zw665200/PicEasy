@@ -22,7 +22,7 @@
             android:textSize="@dimen/sp_15"
             android:textStyle="bold" />
 
-        <com.picfix.tools.view.views.JustifyTextView
+        <com.piceasy.tools.view.views.JustifyTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_25"
@@ -34,7 +34,7 @@
             android:textColor="@color/color_content"
             android:textSize="@dimen/sp_13" />
 
-        <com.picfix.tools.view.views.JustifyTextView
+        <com.piceasy.tools.view.views.JustifyTextView
             android:id="@+id/service_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
             android:textColor="@color/color_content"
             android:textSize="@dimen/sp_13" />
 
-        <com.picfix.tools.view.views.JustifyTextView
+        <com.piceasy.tools.view.views.JustifyTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_25"

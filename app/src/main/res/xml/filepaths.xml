@@ -3,7 +3,7 @@
 <resources>
     
     <paths>
-        <external-path name="files_root" path="Android/data/com.picfix.wx/" />
+        <external-path name="files_root" path="Android/data/com.piceasy.wx/" />
         <external-path name="external_storage_root" path="." />
         <external-path name="tt_external_root" path="." />
         <external-path name="tt_external_download" path="Download" />

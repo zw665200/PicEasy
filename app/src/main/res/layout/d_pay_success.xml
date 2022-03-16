@@ -19,7 +19,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/dp_20"
         android:gravity="center"
-        android:text="pay success"
+        android:text="@string/pay_success"
         android:textColor="@color/color_title"
         android:textSize="@dimen/sp_14" />
 

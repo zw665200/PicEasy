@@ -12,13 +12,12 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_login">
 
-
         <com.google.android.exoplayer2.ui.PlayerView
             android:id="@+id/player"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hide_on_touch="true"
-            app:resize_mode="fill"
+            app:resize_mode="fit"
             app:use_controller="false" />
 
         <ImageView
@@ -39,18 +38,18 @@
 
     </FrameLayout>
 
-
     <FrameLayout
         android:id="@+id/bottom_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="-10dp"
         android:background="@drawable/shape_top_corner_light_blue">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_80"
-            android:layout_margin="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginEnd="@dimen/dp_16"
             android:background="@drawable/pay_item_top">
 
             <ImageView
@@ -104,17 +103,17 @@
             android:id="@+id/price_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_100"
-            android:layout_marginBottom="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_90"
+            android:layout_marginBottom="@dimen/dp_90"
             android:overScrollMode="never" />
 
         <Button
             android:id="@+id/do_pay"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_45"
+            android:layout_height="@dimen/dp_40"
             android:layout_gravity="bottom"
             android:layout_marginStart="@dimen/sp_16"
-            android:layout_marginTop="@dimen/sp_16"
+            android:layout_marginTop="@dimen/dp_5"
             android:layout_marginEnd="@dimen/sp_16"
             android:layout_marginBottom="@dimen/dp_40"
             android:background="@drawable/shape_corner_yellow"

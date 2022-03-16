@@ -184,6 +184,7 @@
     <string name="mine_dear_member">亲爱的会员</string>
     <string name="mine_enjoy_more_benefits">享受更多服务</string>
     <string name="mine_enjoy_times">次可用</string>
+    <string name="mine_unlimited_times">不限次</string>
     <string name="mine_buy">购买</string>
     <string name="login_signin_google">谷歌登录</string>
     <string name="login_signin_wechat">微信登录</string>
@@ -195,6 +196,8 @@
     <string name="pay_item_des_2">首月$0.99</string>
     <string name="pay_item_des_3">20%折扣</string>
     <string name="pay_item_des_4">30%折扣</string>
+    <string name="pay_item_des_10">$3.19/月</string>
+    <string name="pay_item_des_11">$2.79/月</string>
     <string name="pay_item_des_5">订阅</string>
     <string name="pay_item_des_6">随时取消</string>
     <string name="pay_item_des_7">所有功能可用</string>
@@ -221,4 +224,15 @@
     <string name="home_more">更多</string>
     <string name="pay_item_des_8">自动扣费，随时取消。</string>
     <string name="pay_item_des_9">订阅条款</string>
+    <string name="pay_success">支付成功</string>
+    <string name="saved_path">保存的位置：</string>
+    <string name="before">优化前</string>
+    <string name="now">优化后</string>
+    <string name="import_pic">选择图片</string>
+    <string name="exceed_3">照片不高于3MB</string>
+    <string name="exceed_4">照片不高于4MB</string>
+    <string name="exceed_5">照片不高于5MB</string>
+    <string name="exceed_6">照片不高于6MB</string>
+    <string name="terms_agreement">服务协议 - 隐私政策</string>
+    <string name="terms_content">订阅成功扣除当前期限的费用，同时发放会员权限。除非您在当前期限结束前24小时取消订阅，否则您的订阅将自动续订。您的帐户将被收取在当前时期结束前24小时内的价格列出的更新。订阅可以管理和自动更新可以通过支付宝关闭我的帐户支付。您可以在任何时候取消订阅，取消将从下一个订阅期开始生效，当前计费周期没有退款。</string>
 </resources>
