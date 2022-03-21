@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.baidu.mobads.action.BaiduAction
 import com.baidu.mobads.action.PrivacyStatus
 import com.piceasy.tools.callback.Callback
+import com.piceasy.tools.config.Constant
 import com.piceasy.tools.utils.LivePermissions
 import com.piceasy.tools.utils.PermissionResult
 import com.piceasy.tools.utils.ToastUtil
@@ -90,8 +91,9 @@ abstract class BaseFragment : Fragment(), CoroutineScope by MainScope(), View.On
                 is PermissionResult.Grant -> {
                     method()
                     mmkv?.encode("permission_deny", 0L)
-
-                    BaiduAction.setPrivacyStatus(PrivacyStatus.AGREE)
+                    if (Constant.OCPC) {
+                        BaiduAction.setPrivacyStatus(PrivacyStatus.AGREE)
+                    }
                 }
 
                 is PermissionResult.Rationale -> {

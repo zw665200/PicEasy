@@ -69,7 +69,7 @@ class PayActivity : BaseActivity() {
     private var isShow = false
 
     private var orderSn = ""
-    private var uri = "file:///android_asset/export.mp4"
+    private var uri = "file:///android_asset/export_chinese.mp4"
 
     private lateinit var mAdapter: DataAdapter<MenuResource>
     private var mList = mutableListOf<MenuResource>()
@@ -113,11 +113,11 @@ class PayActivity : BaseActivity() {
         val width = AppUtil.getScreenWidth(this)
         val layout = playerView.layoutParams
         layout.width = width
-        layout.height = 640 * width / 544
+        layout.height = 640 * width / 520
         playerView.layoutParams = layout
 
         val bottomParam = bottomView.layoutParams as FrameLayout.LayoutParams
-        bottomParam.topMargin = 640 * width / 544 - AppUtil.dp2px(this, 70f)
+        bottomParam.topMargin = 640 * width / 520 - AppUtil.dp2px(this, 70f)
         bottomView.layoutParams = bottomParam
 
     }

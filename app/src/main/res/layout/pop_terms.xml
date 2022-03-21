@@ -20,9 +20,11 @@
         android:id="@+id/popup_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:maxHeight="@dimen/dp_300"
         android:layout_marginStart="@dimen/dp_16"
         android:layout_marginEnd="@dimen/dp_16"
         android:lineSpacingExtra="@dimen/dp_5"
+        android:scrollbars="vertical"
         android:text="@string/terms_content"
         android:textColor="@color/color_dark_grey"
         android:textSize="12sp" />

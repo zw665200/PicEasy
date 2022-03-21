@@ -3,6 +3,7 @@ package com.piceasy.tools.view.views;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.graphics.drawable.BitmapDrawable;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -92,7 +93,9 @@ public class TermsPop {
     public void showPopupWindow(View rootView) {
         View popupWindow_view = LayoutInflater.from(mContext).inflate(R.layout.pop_terms, null);
         agreement = popupWindow_view.findViewById(R.id.agreement);
+        JustifyTextView content = popupWindow_view.findViewById(R.id.popup_content);
         agreement.setOnClickListener(v -> callback.onSuccess());
+        content.setMovementMethod(ScrollingMovementMethod.getInstance());
 
         //添加子View
 //        addView(popupWindow_view);
@@ -122,7 +125,6 @@ public class TermsPop {
      * 消失PopupWindow
      */
     public void dismiss() {
-        JLog.i("123");
         if (mPopupWindow != null && mPopupWindow.isShowing()) {
             mPopupWindow.dismiss();
         }
